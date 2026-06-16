@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scenario Builder</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0f0f13;--panel:#18181f;--border:#2a2a35;
+  --accent:#7c5cfc;--accent2:#5c9cfc;
+  --text:#e8e8f0;--muted:#888;--danger:#e24b4a;
+  --zone:#7c5cfc;--tooltip-bg:#7c5cfc;
+}
+body{font-family:system-ui,sans-serif;background:var(--bg);color:var(--text);height:100vh;display:flex;flex-direction:column;overflow:hidden;font-size:13px}
+
+/* HEADER */
+header{height:44px;background:var(--panel);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 12px;gap:12px;flex-shrink:0}
+header h1{font-size:14px;font-weight:600;color:var(--accent);flex:1}
+.hbtn{background:none;border:1px solid var(--border);color:var(--text);padding:4px 10px;border-radius:6px;cursor:pointer;font-size:12px;display:flex;align-items:center;gap:5px}
+.hbtn:hover{border-color:var(--accent);color:var(--accent)}
+.hbtn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.hbtn.primary:hover{opacity:.85}
+.hbtn.preview{border-color:var(--accent2);color:var(--accent2)}
+.hbtn.preview:hover{background:var(--accent2);color:#fff}
+
+/* LAYOUT */
+.layout{display:flex;flex:1;overflow:hidden}
+
+/* SIDEBAR */
+aside{width:280px;background:var(--panel);border-right:1px solid var(--border);display:flex;flex-direction:column;flex-shrink:0}
+.sidebar-top{padding:10px;border-bottom:1px solid var(--border)}
+.sidebar-scroll{flex:1;overflow-y:auto;padding:10px}
+
+/* STEP LIST */
+.step-list{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
+.step-item{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6px;cursor:pointer;border:1px solid transparent;transition:.15s}
+.step-item:hover{background:#222230}
+.step-item.active{background:#1e1b38;border-color:var(--accent)}
+.step-thumb{width:48px;height:30px;background:#111;border-radius:3px;overflow:hidden;flex-shrink:0;border:1px solid var(--border)}
+.step-thumb img{width:100%;height:100%;object-fit:cover}
+.step-thumb.large{width:100%;height:auto;aspect-ratio:16/9}
+.step-label{flex:1;font-size:12px}
+.step-del{background:none;border:none;color:var(--muted);cursor:pointer;padding:2px 4px;font-size:14px}
+.step-del:hover{color:var(--danger)}
+
+/* SECTION LABEL */
+.sec-label{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;margin-top:12px}
+.sec-label:first-child{margin-top:0}
+
+/* TOOLTIP EDITOR */
+.tooltip-card{background:#111118;border:1px solid var(--border);border-radius:6px;padding:8px;margin-bottom:6px}
+.tooltip-card textarea{width:100%;background:#0a0a10;border:1px solid var(--border);border-radius:4px;color:var(--text);padding:5px 7px;font-size:12px;resize:vertical;min-height:52px;outline:none;font-family:inherit}
+.tooltip-card textarea:focus{border-color:var(--accent)}
+.tooltip-card-row{display:flex;align-items:center;gap:6px;margin-top:6px}
+.tooltip-card-row label{font-size:11px;color:var(--muted);white-space:nowrap}
+select{background:#111118;border:1px solid var(--border);color:var(--text);padding:3px 6px;border-radius:4px;font-size:12px;outline:none}
+select:focus{border-color:var(--accent)}
+.btn-sm{background:none;border:1px solid var(--border);color:var(--text);padding:3px 8px;border-radius:4px;cursor:pointer;font-size:11px}
+.btn-sm:hover{border-color:var(--accent);color:var(--accent)}
+.btn-sm.danger:hover{border-color:var(--danger);color:var(--danger)}
+.btn-add{width:100%;border:1px dashed var(--border);background:none;color:var(--muted);padding:5px;border-radius:6px;cursor:pointer;font-size:12px}
+.btn-add:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ZONE LIST */
+.zone-item{display:flex;align-items:center;justify-content:space-between;padding:4px 8px;background:#111118;border:1px solid var(--border);border-radius:4px;margin-bottom:4px;font-size:11px}
+.zone-badge{font-size:10px;color:var(--zone);font-weight:600}
+
+/* MASCOT OPTIONS */
+.mascot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:6px}
+.mascot-opt{border:2px solid var(--border);border-radius:6px;padding:6px 4px;text-align:center;cursor:pointer;transition:.15s}
+.mascot-opt:hover{border-color:var(--muted)}
+.mascot-opt.selected{border-color:var(--accent);background:#1e1b38}
+.mascot-opt img{width:32px;height:32px;object-fit:contain;display:block;margin:0 auto 3px}
+.mascot-opt span{font-size:10px;color:var(--muted)}
+.mascot-fallback{font-size:28px;display:block;margin:0 auto 3px;line-height:1}
+
+/* CANVAS AREA */
+main{flex:1;overflow:auto;display:flex;flex-direction:column;position:relative}
+.toolbar{height:36px;background:var(--panel);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 12px;gap:12px;flex-shrink:0}
+.mode-badge{font-size:11px;padding:2px 8px;border-radius:4px;font-weight:600}
+.mode-badge.draw{background:#1e2b3a;color:var(--zone);border:1px solid var(--zone)}
+.mode-badge.edit{background:#1b1a30;color:var(--muted);border:1px solid var(--border)}
+.canvas-wrap{flex:1;overflow:auto;display:flex;align-items:flex-start;justify-content:center;padding:24px;background:repeating-conic-gradient(#141419 0% 25%,#111116 0% 50%) 0 0/20px 20px}
+.canvas-wrap.draw-mode{cursor:crosshair}
+.canvas-inner{position:relative;display:inline-block;line-height:0;box-shadow:0 8px 40px rgba(0,0,0,.6)}
+.canvas-inner img{display:block;max-width:100%;user-select:none;pointer-events:none}
+
+/* CLICK ZONES */
+.c-zone{position:absolute;border:2px solid var(--zone);background:rgba(124, 92, 252, 0.2);cursor:pointer;transition:.1s;border-radius:4px;animation:pulse 2s infinite ease-in-out;transform-origin:center}
+.c-zone:hover{background:rgba(124, 92, 252, 0.4)}
+.c-zone-del{position:absolute;top:-8px;right:-8px;width:16px;height:16px;background:var(--danger);border-radius:50%;border:none;color:#fff;font-size:11px;cursor:pointer;display:none;align-items:center;justify-content:center;line-height:1}
+.c-zone:hover .c-zone-del{display:flex}
+.draw-preview{position:absolute;border:2px solid #fbbf24;background:rgba(251,191,36,.15);pointer-events:none;z-index:50}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.05); opacity: 0.9; }
+    100% { transform: scale(1); opacity: 0.6; }
+}
+
+/* TOOLTIP LAYER */
+.tl-tooltip{position:absolute;cursor:move;z-index:20;user-select:none}
+.tl-box{min-width:180px;max-width:280px;background:var(--tooltip-bg);color:#fff;padding:10px 12px;border-radius:8px;font-size:13px;line-height:1.4;box-shadow:0 4px 16px rgba(0,0,0,.5);pointer-events:none}
+.tl-next-btn{margin-top:8px;padding:4px 8px;background:rgba(255,255,255,0.2);border:none;border-radius:4px;color:#fff;cursor:pointer;font-size:11px;display:inline-block}
+.tl-next-btn:hover{background:rgba(255,255,255,0.3)}
+.tl-mascot{position:absolute;pointer-events:none}
+.tl-mascot img{width:48px;height:48px;object-fit:contain}
+.tl-mascot-emoji{font-size:36px;line-height:1}
+
+
+/* EMPTY STATE */
+.empty{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;gap:8px;color:var(--muted)}
+.empty-icon{font-size:48px;opacity:.3}
+
+/* FILE UPLOAD */
+.upload-zone{border:1.5px dashed var(--border);border-radius:6px;padding:10px;text-align:center;cursor:pointer;color:var(--muted);font-size:12px;transition:.15s;position:relative}
+.upload-zone:hover{border-color:var(--accent);color:var(--accent)}
+.upload-zone input{position:absolute;inset:0;opacity:0;cursor:pointer}
+
+/* IMPORT/EXPORT */
+#import-input{display:none}
+
+/* SEPARATOR */
+hr{border:none;border-top:1px solid var(--border);margin:8px 0}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Scenario Builder</h1>
+  <span id="step-counter" style="font-size:12px;color:var(--muted)"></span>
+  <button class="hbtn" onclick="triggerImport()">📂 Загрузить JSON</button>
+  <button class="hbtn" onclick="triggerMascotUpload()">🎭 Добавить маскота</button>
+  <button class="hbtn preview" onclick="togglePreview()">▶️ Предпросмотр</button>
+  <button class="hbtn primary" onclick="exportJSON()">💾 Скачать JSON</button>
+  <input type="file" id="import-input" accept=".json" onchange="importJSON(event)">
+  <input type="file" id="mascot-upload" accept="image/*,.svg" multiple style="display:none" onchange="addMascots(event)">
+</header>
+
+<div class="layout">
+  <aside>
+    <div class="sidebar-top">
+      <div class="sec-label" style="margin-top:0">Шаги сценария</div>
+      <div class="upload-zone" style="margin-bottom:8px">
+        <input type="file" accept="image/*" multiple onchange="handleImageUpload(event)">
+        + Загрузить скриншоты
+      </div>
+      <div class="step-list" id="step-list"></div>
+      <button class="btn-add" onclick="addEmptyStep()">+ Пустой шаг</button>
+    </div>
+
+    <div class="sidebar-scroll" id="step-editor" style="display:none">
+      <div class="sec-label">Всплывающие сообщения</div>
+      <div id="tooltip-list"></div>
+      <button class="btn-add" onclick="addTooltip()">+ Добавить тултип</button>
+
+      <div class="sec-label">Кликабельные зоны</div>
+      <div style="font-size:11px;color:var(--muted);margin-bottom:6px">Нарисуйте зону на скриншоте мышью</div>
+      <div id="zone-list"></div>
+
+      <hr>
+      <div class="sec-label">Следующий шаг (по фото)</div>
+      <div id="next-step-grid" class="step-list" style="grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px"></div>
+
+      <hr>
+      <div class="sec-label">Изображение шага</div>
+      <div class="upload-zone">
+        <input type="file" accept="image/*" onchange="updateStepImage(event)">
+        Заменить скриншот
+      </div>
+    </div>
+
+    <div id="step-editor-empty" style="padding:10px;color:var(--muted);font-size:12px;text-align:center;display:none">
+      Выберите шаг для редактирования
+    </div>
+  </aside>
+
+  <main>
+    <div class="toolbar">
+      <span id="mode-badge" class="mode-badge edit">Режим: редактирование</span>
+      <span style="font-size:11px;color:var(--muted)">Для рисования зоны кликните и тяните по скриншоту | Маскот и тултип — перетащите</span>
+    </div>
+    <div class="canvas-wrap" id="canvas-wrap">
+      <div class="empty" id="empty-state">
+        <div class="empty-icon">🖼️</div>
+        <div>Загрузите скриншоты слева</div>
+      </div>
+      <div class="canvas-inner" id="canvas-inner" style="display:none">
+        <img id="canvas-img" src="" alt="">
+        <div id="zones-layer"></div>
+        <div id="tooltips-layer"></div>
+        <div id="draw-preview" class="draw-preview" style="display:none"></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+const BUILT_IN_MASCOTS = [
+  { id: 'happy_right', name: 'Happy Right', src: 'assets/icons/mascotHappyRight.svg', fallback: '😊' },
+  { id: 'happy_left',  name: 'Happy Left',  src: 'assets/icons/mascotHappyLeft.svg',  fallback: '😊' },
+  { id: 'thinking',    name: 'Thinking',    src: 'assets/icons/mascotThinking.svg',    fallback: '🤔' },
+  { id: 'pointing',    name: 'Pointing',    src: 'assets/icons/mascotPointing.svg',    fallback: '👉' },
+  { id: 'cool',        name: 'Cool',        src: '',                          fallback: '😎' },
+  { id: 'surprised',   name: 'Surprised',   src: '',                          fallback: '😲' },
+  { id: 'love',        name: 'Love',        src: '',                          fallback: '😍' },
+  { id: 'wink',        name: 'Wink',        src: '',                          fallback: '😉' },
+];
+
+let state = {
+  steps: [],          // { id, image, tooltips:[], clickZones:[] }
+  activeIdx: -1,
+  mascots: [...BUILT_IN_MASCOTS], // { id, name, src, fallback }
+  previewMode: false,
+  previewStepIdx: -1,
+  previewTooltipIdx: 0
+};
+
+let drag = { active: false, type: null, idx: -1, ox: 0, oy: 0, sx: 0, sy: 0, ex: 0, ey: 0 };
+let imgRect = null;
+
+function uid() { return Math.random().toString(36).slice(2,8); }
+function get(id) { return document.getElementById(id); }
+function activeStep() { return state.steps[state.activeIdx] || null; }
+
+// ── STEP MANAGEMENT ────────────────────────────────────────────────────────────
+function handleImageUpload(e) {
+  const files = Array.from(e.target.files).sort((a,b) => a.name.localeCompare(b.name));
+  files.forEach(f => {
+    const reader = new FileReader();
+    reader.onload = ev => {
+      state.steps.push({ id: uid(), label: f.name.replace(/\.[^.]+$/,''), image: ev.target.result, tooltips: [], clickZones: [] });
+      if (state.activeIdx < 0) state.activeIdx = 0;
+      render();
+    };
+    reader.readAsDataURL(f);
+  });
+  e.target.value = '';
+}
+
+function addEmptyStep() {
+  state.steps.push({ id: uid(), label: `Шаг ${state.steps.length+1}`, image: null, tooltips: [], clickZones: [] });
+  state.activeIdx = state.steps.length - 1;
+  render();
+}
+
+function removeStep(idx) {
+  state.steps.splice(idx, 1);
+  if (state.activeIdx >= state.steps.length) state.activeIdx = state.steps.length - 1;
+  render();
+}
+
+function selectStep(idx) {
+  state.activeIdx = idx;
+  render();
+}
+
+function updateStepImage(e) {
+  const s = activeStep(); if (!s) return;
+  const reader = new FileReader();
+  reader.onload = ev => { s.image = ev.target.result; render(); };
+  reader.readAsDataURL(e.target.files[0]);
+  e.target.value = '';
+}
+
+// ── TOOLTIP MANAGEMENT ────────────────────────────────────────────────────────
+function addTooltip() {
+  const s = activeStep(); if (!s) return;
+  s.tooltips.push({ id: uid(), title: '', content: '<p>Новое сообщение</p>', mascot: 'm_happy_right', x: 50, y: 40, mascotSide: 'left', mascotX: 44, mascotY: 34 });
+  render();
+}
+
+function removeTooltip(tid) {
+  const s = activeStep(); if (!s) return;
+  s.tooltips = s.tooltips.filter(t => t.id !== tid);
+  render();
+}
+
+// ── ZONE MANAGEMENT ───────────────────────────────────────────────────────────
+function removeZone(idx) {
+  const s = activeStep(); if (!s) return;
+  s.clickZones.splice(idx, 1);
+  render();
+}
+
+// ── MASCOT MANAGEMENT ─────────────────────────────────────────────────────────
+function triggerMascotUpload() { get('mascot-upload').click(); }
+function addMascots(e) {
+  Array.from(e.target.files).forEach(f => {
+    const reader = new FileReader();
+    const id = 'm_custom_' + uid();
+    reader.onload = ev => {
+      state.mascots.push({ id, name: f.name.replace(/\.[^.]+$/,''), src: ev.target.result, fallback: '🎭' });
+      render();
+    };
+    reader.readAsDataURL(f);
+  });
+  e.target.value = '';
+}
+
+function getMascot(id) {
+  return state.mascots.find(m => m.id === id || 'm_'+m.id === id) || state.mascots[0];
+}
+
+// ── IMPORT / EXPORT ───────────────────────────────────────────────────────────
+function triggerImport() { get('import-input').click(); }
+
+function importJSON(e) {
+  const reader = new FileReader();
+  reader.onload = ev => {
+    try {
+      const data = JSON.parse(ev.target.result);
+      // Support both formats: direct steps array or {steps, mascots}
+      if (Array.isArray(data)) {
+        state.steps = data.map(normalizeStep);
+      } else if (data.steps) {
+        state.steps = data.steps.map(normalizeStep);
+        if (data.mascots) {
+          const existing = new Set(state.mascots.map(m => m.id));
+          data.mascots.filter(m => !existing.has(m.id)).forEach(m => state.mascots.push(m));
+        }
+      }
+      state.activeIdx = state.steps.length > 0 ? 0 : -1;
+      render();
+    } catch(err) { alert('Ошибка чтения JSON: ' + err.message); }
+  };
+  reader.readAsText(e.target.files[0]);
+  e.target.value = '';
+}
+
+function normalizeStep(s) {
+    return {
+      id: s.id || uid(),
+      label: s.label || '',
+      image: s.image || null,
+      nextStepId: s.nextStepId || null,
+      tooltips: (s.tooltips || s.steps || []).map(t => ({
+        id: t.id || uid(),
+        title: t.title || '',
+        content: t.content || t.text || '',
+        mascot: t.mascot || 'm_happy_right',
+        x: t.x !== undefined ? t.x : 50,
+        y: t.y !== undefined ? t.y : 40,
+        mascotSide: t.mascotSide || 'left',
+        mascotX: t.mascotX !== undefined ? t.mascotX : (t.x !== undefined ? t.x - 6 : 44),
+        mascotY: t.mascotY !== undefined ? t.mascotY : (t.y !== undefined ? t.y - 6 : 34),
+      })),
+      clickZones: (s.clickZones || s.hotspots || []).map(z => ({
+        x: z.x || 0, y: z.y || 0, w: z.w || z.width || 20, h: z.h || z.height || 10,
+        action: z.action || '',
+      })),
+    };
+  }
+
+
+function exportJSON() {
+  // Export in etrn-compatible format
+    const out = state.steps.map((s, si) => ({
+      id: s.id,
+      label: s.label || `Шаг ${si+1}`,
+      image: s.image,
+      nextStepId: s.nextStepId || null,
+      steps: s.tooltips.map(t => ({
+        id: t.id,
+        title: t.title,
+        content: t.content,
+        mascot: t.mascot,
+        x: Math.round(t.x * 100) / 100,
+        y: Math.round(t.y * 100) / 100,
+        mascotSide: t.mascotSide,
+        mascotX: Math.round(t.mascotX * 100) / 100,
+        mascotY: Math.round(t.mascotY * 100) / 100,
+      })),
+      clickZones: s.clickZones.map(z => ({
+        x: Math.round(z.x * 100) / 100,
+        y: Math.round(z.y * 100) / 100,
+        w: Math.round(z.w * 100) / 100,
+        h: Math.round(z.h * 100) / 100,
+        action: z.action.endsWith('.html') ? z.action : z.action + '.html',
+      })),
+    }));
+  const blob = new Blob([JSON.stringify(out, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'scenario.json';
+  a.click();
+}
+
+// ── CANVAS MOUSE EVENTS ───────────────────────────────────────────────────────
+function getCanvasWrap() { return get('canvas-wrap'); }
+
+function setupCanvasEvents() {
+  const ci = get('canvas-inner');
+  ci.addEventListener('mousedown', onCanvasDown);
+  window.addEventListener('mousemove', onCanvasMove);
+  window.addEventListener('mouseup', onCanvasUp);
+}
+
+function getImgRect() {
+  return get('canvas-img').getBoundingClientRect();
+}
+
+function pxToPercent(px, py, rect) {
+  return {
+    x: ((px - rect.left) / rect.width) * 100,
+    y: ((py - rect.top) / rect.height) * 100,
+  };
+}
+
+function onCanvasDown(e) {
+  const s = activeStep(); if (!s || !s.image) return;
+  imgRect = getImgRect();
+
+  // Check if clicking on a mascot (independent drag)
+  const mascotEl = e.target.closest('.tl-mascot-drag');
+  if (mascotEl) {
+    const tid = mascotEl.dataset.tid;
+    const tobj = s.tooltips.find(t => t.id === tid);
+    if (tobj) {
+      const p = pxToPercent(e.clientX, e.clientY, imgRect);
+      drag = { active: true, type: 'mascot', tid, ox: p.x - tobj.mascotX, oy: p.y - tobj.mascotY };
+      e.preventDefault();
+      return;
+    }
+  }
+
+  // Check if clicking on a tooltip
+  const tt = e.target.closest('.tl-tooltip');
+  if (tt) {
+    const tid = tt.dataset.tid;
+    const tobj = s.tooltips.find(t => t.id === tid);
+    if (tobj) {
+      const p = pxToPercent(e.clientX, e.clientY, imgRect);
+      drag = { active: true, type: 'tooltip', tid, ox: p.x - tobj.x, oy: p.y - tobj.y };
+      e.preventDefault();
+      return;
+    }
+  }
+
+  // Drawing a zone
+  if (e.target.tagName === 'IMG' || e.target.id === 'zones-layer' || e.target.classList.contains('canvas-inner')) {
+    const p = pxToPercent(e.clientX, e.clientY, imgRect);
+    drag = { active: true, type: 'zone', sx: p.x, sy: p.y, ex: p.x, ey: p.y };
+    updateDrawPreview();
+    get('draw-preview').style.display = 'block';
+    get('canvas-wrap').classList.add('draw-mode');
+    setModeBadge('draw');
+    e.preventDefault();
+  }
+}
+
+function onCanvasMove(e) {
+  if (!drag.active) return;
+  imgRect = getImgRect();
+  const p = pxToPercent(e.clientX, e.clientY, imgRect);
+  const s = activeStep(); if (!s) return;
+
+  if (drag.type === 'mascot') {
+    const tobj = s.tooltips.find(t => t.id === drag.tid);
+    if (tobj) {
+      tobj.mascotX = Math.min(98, Math.max(2, p.x - drag.ox));
+      tobj.mascotY = Math.min(98, Math.max(2, p.y - drag.oy));
+      renderTooltipLayer();
+    }
+  } else if (drag.type === 'tooltip') {
+    const tobj = s.tooltips.find(t => t.id === drag.tid);
+    if (tobj) {
+      tobj.x = Math.min(95, Math.max(5, p.x - drag.ox));
+      tobj.y = Math.min(95, Math.max(5, p.y - drag.oy));
+      renderTooltipLayer();
+    }
+  } else if (drag.type === 'zone') {
+    drag.ex = p.x;
+    drag.ey = p.y;
+    updateDrawPreview();
+  }
+}
+
+function onCanvasUp(e) {
+  if (!drag.active) return;
+  if (drag.type === 'zone') {
+    const s = activeStep(); if (s) {
+      const x = Math.min(drag.sx, drag.ex);
+      const y = Math.min(drag.sy, drag.ey);
+      const w = Math.abs(drag.ex - drag.sx);
+      const h = Math.abs(drag.ey - drag.sy);
+      if (w > 1 && h > 1) {
+        s.clickZones.push({ x, y, w, h, action: '' });
+        renderZoneList();
+        renderZoneLayer();
+      }
+    }
+    get('draw-preview').style.display = 'none';
+    get('canvas-wrap').classList.remove('draw-mode');
+    setModeBadge('edit');
+  }
+  drag = { active: false };
+}
+
+function updateDrawPreview() {
+  const prev = get('draw-preview');
+  const x = Math.min(drag.sx, drag.ex);
+  const y = Math.min(drag.sy, drag.ey);
+  const w = Math.abs(drag.ex - drag.sx);
+  const h = Math.abs(drag.ey - drag.sy);
+  prev.style.left = x + '%';
+  prev.style.top = y + '%';
+  prev.style.width = w + '%';
+  prev.style.height = h + '%';
+}
+
+function setModeBadge(mode) {
+  const b = get('mode-badge');
+  if (mode === 'draw') { b.textContent = 'Режим: рисование зоны'; b.className = 'mode-badge draw'; }
+  else { b.textContent = 'Режим: редактирование'; b.className = 'mode-badge edit'; }
+}
+
+function togglePreview() {
+  if (state.previewMode) {
+    state.previewMode = false;
+  } else {
+    if (state.steps.length === 0) {
+      alert('Сначала добавьте шаги!');
+      return;
+    }
+    state.previewMode = true;
+    state.previewStepIdx = state.activeIdx >= 0 ? state.activeIdx : 0;
+    state.previewTooltipIdx = 0;
+  }
+  render();
+}
+
+function nextPreviewTooltip() {
+  const s = state.steps[state.previewStepIdx];
+  if (s && state.previewTooltipIdx < s.tooltips.length - 1) {
+    state.previewTooltipIdx++;
+    render();
+  } else {
+    if (state.previewStepIdx < state.steps.length - 1) {
+      state.previewStepIdx++;
+      state.previewTooltipIdx = 0;
+      render();
+    } else {
+      togglePreview();
+    }
+  }
+}
+
+function renderPreview() {
+  const main = get('main');
+  main.innerHTML = '';
+
+  const s = state.steps[state.previewStepIdx];
+  if (!s) {
+    togglePreview();
+    return;
+  }
+
+  const canvasWrap = document.createElement('div');
+  canvasWrap.className = 'canvas-wrap';
+  canvasWrap.style.background = '#000';
+  
+  const canvasInner = document.createElement('div');
+  canvasInner.className = 'canvas-inner';
+  canvasInner.style.display = 'inline-block';
+  
+  const img = document.createElement('img');
+  img.src = s.image || '';
+  canvasInner.appendChild(img);
+
+  const tooltipsLayer = document.createElement('div');
+  tooltipsLayer.id = 'tooltips-layer';
+  canvasInner.appendChild(tooltipsLayer);
+
+  canvasWrap.appendChild(canvasInner);
+  main.appendChild(canvasWrap);
+
+  const closeBtn = document.createElement('button');
+  closeBtn.className = 'hbtn';
+  closeBtn.style.position = 'absolute';
+  closeBtn.style.top = '10px';
+  closeBtn.style.right = '10px';
+  closeBtn.style.zIndex = '1000';
+  closeBtn.textContent = '✕ Закрыть';
+  closeBtn.onclick = togglePreview;
+  main.appendChild(closeBtn);
+
+  renderPreviewTooltips(s);
+}
+
+function renderPreviewTooltips(s) {
+  const layer = get('tooltips-layer');
+  if (!layer) return;
+  layer.innerHTML = '';
+
+  const t = s.tooltips[state.previewTooltipIdx];
+  if (!t) return;
+
+  const mascot = getMascotById(t.mascot);
+  const mascotHtml = mascot
+    ? (mascot.src.startsWith('data:') || mascot.src.endsWith('.svg') || mascot.src.endsWith('.png'))
+      ? `<img src="${escAttr(mascot.src)}" style="width:48px;height:48px;object-fit:contain;display:block">`
+      : `<span class="tl-mascot-emoji">${mascot.fallback}</span>`
+    : '';
+
+  const isLastStep = state.previewStepIdx === state.steps.length - 1;
+  const isLastTooltip = state.previewTooltipIdx === s.tooltips.length - 1;
+  const btnText = (isLastStep && isLastTooltip) ? 'Завершить →' : 'Далее →';
+
+  const flipStyle = t.mascotSide === 'right' ? 'transform:scaleX(-1)' : '';
+  const mx = t.mascotX !== undefined ? t.mascotX : t.x - 6;
+  const my = t.mascotY !== undefined ? t.mascotY : t.y - 6;
+
+  // Mascot as independent element
+  const mascotDiv = document.createElement('div');
+  mascotDiv.style.cssText = `position:absolute;left:${mx}%;top:${my}%;z-index:25;pointer-events:none`;
+  mascotDiv.innerHTML = `<div style="${flipStyle}">${mascotHtml}</div>`;
+  layer.appendChild(mascotDiv);
+
+  const tooltipDiv = document.createElement('div');
+  tooltipDiv.className = 'tl-tooltip';
+  tooltipDiv.style.left = t.x + '%';
+  tooltipDiv.style.top = t.y + '%';
+  tooltipDiv.style.transform = 'translate(-50%,-50%)';
+  tooltipDiv.style.pointerEvents = 'auto';
+
+  tooltipDiv.innerHTML = `
+    <div class="tl-box">
+      ${t.title ? `<div style="font-weight:600;margin-bottom:3px">${t.title}</div>` : ''}
+      <div>${t.content}</div>
+      <div class="tl-next-btn" onclick="nextPreviewTooltip()">${btnText}</div>
+    </div>
+  `;
+  layer.appendChild(tooltipDiv);
+}
+
+function render() {
+  if (state.previewMode) {
+    renderPreview();
+  } else {
+    renderStepList();
+    renderStepEditor();
+    renderCanvas();
+    renderNextStepGrid();
+  }
+}
+
+function renderNextStepGrid() {
+  const s = activeStep();
+  const el = get('next-step-grid');
+  if (!el || !s) {
+    el.innerHTML = '';
+    return;
+  }
+
+  el.innerHTML = state.steps.map((step, i) => {
+    if (step.id === s.id) return ''; // Don't show current step
+    const isSelected = s.nextStepId === step.id;
+    return `
+      <div class="step-item ${isSelected ? 'active' : ''}" onclick="setNextStep('${step.id}')" style="flex-direction:column; padding:4px; gap:4px; align-items:center; justify-content:center; text-align:center">
+        <div class="step-thumb large">${step.image ? `<img src="${step.image}">` : ''}</div>
+        <div class="step-label" style="font-size:10px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; width:100%">${step.label || `Шаг ${i+1}`}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+function setNextStep(stepId) {
+  const s = activeStep(); if (!s) return;
+  if (s.nextStepId === stepId) {
+    s.nextStepId = null;
+  } else {
+    s.nextStepId = stepId;
+  }
+  render();
+}
+
+function renderStepList() {
+  const el = get('step-list');
+  get('step-counter').textContent = state.steps.length ? `${state.steps.length} шагов` : '';
+  el.innerHTML = state.steps.map((s, i) => `
+    <div class="step-item ${i === state.activeIdx ? 'active' : ''}" onclick="selectStep(${i})">
+      <div class="step-thumb">${s.image ? `<img src="${s.image}">` : ''}</div>
+      <span class="step-label">${s.label || `Шаг ${i+1}`}</span>
+      <button class="step-del" onclick="event.stopPropagation();removeStep(${i})">×</button>
+    </div>
+  `).join('');
+}
+
+function renderStepEditor() {
+  const s = activeStep();
+  get('step-editor').style.display = s ? 'flex' : 'none';
+  get('step-editor').style.flexDirection = 'column';
+  get('step-editor-empty').style.display = (!s && state.steps.length > 0) ? 'block' : 'none';
+  if (!s) return;
+  renderTooltipList(s);
+  renderZoneList(s);
+}
+
+function renderTooltipList(s) {
+  s = s || activeStep(); if (!s) return;
+  const el = get('tooltip-list');
+  const mascotOpts = state.mascots.map(m =>
+    `<option value="${m.id}" ${'' /* selected handled */}>${m.name}</option>`
+  ).join('');
+
+  el.innerHTML = s.tooltips.map(t => `
+    <div class="tooltip-card" data-tid="${t.id}">
+      <div style="display:flex;gap:6px;align-items:center;margin-bottom:5px">
+        <input type="text" value="${escHtml(t.title)}" placeholder="Заголовок (необязательно)"
+          style="flex:1;background:#0a0a10;border:1px solid var(--border);border-radius:4px;color:var(--text);padding:3px 7px;font-size:12px;outline:none"
+          onchange="updateTooltipField('${t.id}','title',this.value)">
+        <button class="btn-sm danger" onclick="removeTooltip('${t.id}')">Удалить</button>
+      </div>
+      <textarea placeholder="Текст сообщения (поддерживает HTML)" onchange="updateTooltipField('${t.id}','content',this.value)">${escHtml(t.content)}</textarea>
+      <div class="tooltip-card-row">
+        <label>Маскот:</label>
+        <select onchange="updateTooltipField('${t.id}','mascot',this.value)" style="flex:1">
+          ${state.mascots.map(m => `<option value="${m.id}" ${t.mascot===m.id?'selected':''}>${m.name}</option>`).join('')}
+        </select>
+        <label>Сторона:</label>
+        <select onchange="updateTooltipField('${t.id}','mascotSide',this.value)">
+          <option value="left" ${t.mascotSide==='left'?'selected':''}>Лево</option>
+          <option value="right" ${t.mascotSide==='right'?'selected':''}>Право</option>
+        </select>
+      </div>
+    </div>
+  `).join('');
+}
+
+function updateTooltipField(tid, field, value) {
+  const s = activeStep(); if (!s) return;
+  const t = s.tooltips.find(t => t.id === tid); if (!t) return;
+  t[field] = value;
+  if (field === 'mascot' || field === 'mascotSide') renderTooltipLayer();
+}
+
+function renderZoneList(s) {
+  s = s || activeStep(); if (!s) return;
+  const el = get('zone-list');
+  el.innerHTML = s.clickZones.map((z, i) => `
+    <div class="zone-item">
+      <span class="zone-badge">Зона ${i+1}</span>
+      <span style="color:var(--muted)">${Math.round(z.x)}% ${Math.round(z.y)}% · ${Math.round(z.w)}×${Math.round(z.h)}</span>
+      <input type="text" value="${escHtml(z.action||'')}" placeholder="action/URL"
+        style="flex:1;margin:0 6px;background:#0a0a10;border:1px solid var(--border);border-radius:3px;color:var(--text);padding:2px 5px;font-size:11px;outline:none"
+        onchange="updateZoneAction(${i},this.value)">
+      <button class="btn-sm danger" onclick="removeZone(${i})">×</button>
+    </div>
+  `).join('') || '<div style="font-size:11px;color:var(--muted)">Нет зон — нарисуйте на скриншоте</div>';
+}
+
+function updateZoneAction(idx, val) {
+  const s = activeStep(); if (!s) return;
+  if (s.clickZones[idx]) s.clickZones[idx].action = val;
+}
+
+function renderCanvas() {
+  const s = activeStep();
+  const empty = get('empty-state');
+  const ci = get('canvas-inner');
+
+  if (!s || !s.image) {
+    empty.style.display = 'flex';
+    ci.style.display = 'none';
+    return;
+  }
+  empty.style.display = 'none';
+  ci.style.display = 'inline-block';
+  get('canvas-img').src = s.image;
+  renderZoneLayer(s);
+  renderTooltipLayer(s);
+}
+
+function renderZoneLayer(s) {
+  s = s || activeStep(); if (!s) return;
+  const el = get('zones-layer');
+  el.innerHTML = s.clickZones.map((z, i) => `
+    <div class="c-zone" style="left:${z.x}%;top:${z.y}%;width:${z.w}%;height:${z.h}%">
+      <button class="c-zone-del" onclick="removeZone(${i})">×</button>
+    </div>
+  `).join('');
+}
+
+function renderTooltipLayer(s) {
+  s = s || activeStep(); if (!s) return;
+  const el = get('tooltips-layer');
+  el.innerHTML = s.tooltips.map(t => {
+    const mascot = getMascotById(t.mascot);
+    const mascotHtml = mascot
+      ? (mascot.src.startsWith('data:') || mascot.src.endsWith('.svg') || mascot.src.endsWith('.png'))
+        ? `<img src="${escAttr(mascot.src)}" style="width:48px;height:48px;object-fit:contain;display:block">`
+        : `<span class="tl-mascot-emoji">${mascot.fallback}</span>`
+      : '';
+
+    const flipStyle = t.mascotSide === 'right' ? 'transform:scaleX(-1)' : '';
+    const mx = t.mascotX !== undefined ? t.mascotX : t.x - 6;
+    const my = t.mascotY !== undefined ? t.mascotY : t.y - 6;
+
+    return `
+      <div class="tl-mascot-drag" data-tid="${t.id}" style="position:absolute;left:${mx}%;top:${my}%;cursor:move;z-index:25;user-select:none" title="Перетащить маскота">
+        <div style="${flipStyle}">${mascotHtml}</div>
+      </div>
+      <div class="tl-tooltip" data-tid="${t.id}" style="left:${t.x}%;top:${t.y}%;transform:translate(-50%,-50%)">
+        <div class="tl-box">
+          ${t.title ? `<div style="font-weight:600;margin-bottom:3px">${t.title}</div>` : ''}
+          <div>${t.content}</div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function getMascotById(id) {
+  return state.mascots.find(m => m.id === id) || null;
+}
+
+function escHtml(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function escAttr(s) { return String(s||'').replace(/"/g,'&quot;'); }
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+setupCanvasEvents();
+render();
+</script>
+</body>
+</html>

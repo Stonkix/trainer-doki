@@ -1,0 +1,447 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url('../assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+
+/* ====== Base & Layout ====== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #6746EB;
+  }
+  
+  .header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px 20px;
+  }
+  .nav-buttons {
+    display: flex;
+    align-items: center;
+  }
+  .logo-and-title {
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo img {
+    width: auto;
+    height: clamp(24px, 4vw, 40px); 
+    max-width: 100%;
+    display: block;
+  }
+  .header-title {
+    color: #072D57;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    line-height: 20px;
+    font-size: calc(14px + (24 - 16) * ((100vw - 375px) / (1440 - 375)));
+  }
+  .background-container {
+    position: relative;
+    width: 100vw;
+    height: calc(100vh - 60px); /* Вычитаем высоту header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .image-wrapper {
+      position: relative;
+      display: inline-block;
+      width: auto;
+      height: auto;
+      overflow: visible;
+  }
+  button.nav-button {
+    border: none;
+    background-color: #fff;
+    z-index: 2;
+    padding: 5px;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  #step-img {
+    max-width: 100vw;
+    max-height: calc(100vh - 60px);
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    z-index: 1;
+  }
+  
+  /* ====== Hotspot Styles ====== */
+  .hotspot-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+  }
+  .hotspot {
+    position: absolute;
+    box-sizing: border-box;
+    pointer-events: none;
+    border-radius: 4px;
+    border: 1px solid #F35959;
+    box-shadow: 0 0 8px 0 rgb(201, 29, 55);
+    animation: hotspotColorPulseBlue 2s infinite;
+    background: transparent;
+    overflow: visible !important;
+  }
+  
+  /* ====== Tooltip Styles ====== */
+  .tooltip {
+    overflow: visible !important;
+    background: #F35959;
+    color: #fff;
+    padding: 16px;
+    border-radius: 4px;
+    max-width: 350px;
+    position: absolute;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 3;
+    width: clamp(280px, 22vw, 400px);
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: clamp(13px, 1.2vw, 16px);
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(.4,0,.2,1), transform 0.6s cubic-bezier(.4,0,.2,1);
+    pointer-events: auto;
+  }
+  .tooltip.tooltip-show {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .tooltip-title {
+    font-size: clamp(14px, 1.3vw, 18px);
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+  .tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+  .tooltip-inner {
+    padding: 0;
+  }
+  .tooltip-actions {
+    margin-top: 12px;
+    display: flex;
+    justify-content: right;
+    gap: 15px;
+  }
+  
+  /* ====== Tooltip Actions (Buttons) ====== */
+  .tooltip-actions .prev,
+  .tooltip-actions .next {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    height: clamp(28px, 2.5vw, 36px);
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(12px, 1.1vw, 15px);
+    font-weight: 700;
+    line-height: 24px;
+    cursor: pointer;
+    box-shadow: none;
+    transition: background 0.2s;
+    outline: none;
+    border: none;
+    padding: 0;
+  }
+  .tooltip-actions .prev {
+    background: transparent;
+    color: #fff;
+  }
+  .tooltip-actions .next {
+    background: #fff;
+    border-radius: 3px;
+    padding: 4px 12px;
+    color: #0074c6;
+  }
+  .tooltip-actions .next:hover {
+    background: #f0f4f8;
+  }
+  
+  /*====== Tooltip Mascot ====== */
+  .tooltip-mascot {
+    position: absolute;
+    width: 140px;
+    height: auto;
+    flex-shrink: 0;
+    pointer-events: none; /* чтобы не мешал кликам */
+    z-index: 4; /* выше тултипа */
+    transition: opacity 0.6s cubic-bezier(.4,0,.2,1), transform 0.6s cubic-bezier(.4,0,.2,1);
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  
+  .tooltip-mascot.mascot-show {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Позиции маскота относительно тултипа - используем inline styles или дополнительные классы для трансформации */
+  .tooltip-mascot-left {
+    right: 100%;
+    top: 50%;
+    margin-right: 20px;
+  }
+  
+  .tooltip-mascot-right {
+    left: 100%;
+    top: 50%;
+    margin-left: 20px;
+  }
+
+  /* Специфические трансформации для показа маскота с учетом его позиции */
+  .tooltip-mascot.mascot-show.tooltip-mascot-left {
+    transform: translate(0, -50%) scale(1);
+  }
+
+  .tooltip-mascot.mascot-show.tooltip-mascot-right {
+    transform: translate(0, -50%) scale(1);
+  }
+  
+  /* Анимация для маскота */
+  .tooltip-mascot-animating {
+    transition: all 0.35s cubic-bezier(.4,0,.2,1);
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  
+  /* ====== Tooltip Arrows ====== */
+  .tooltip-arrow-bottom-center {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -8px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #F35959;
+  }
+  .tooltip-arrow-bottom-left {
+    left: 24px;
+    bottom: -8px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #F35959;
+  }
+  .tooltip-arrow-bottom-right {
+    right: 24px;
+    bottom: -8px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #F35959;
+  }
+  .tooltip-arrow-top-center {
+    left: 50%;
+    transform: translateX(-50%);
+    top: -8px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #F35959;
+  }
+  .tooltip-arrow-top-left {
+    left: 24px;
+    top: -8px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #F35959;
+  }
+  .tooltip-arrow-top-right {
+    right: 10px;
+    top: -8px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #F35959;
+  }
+  .tooltip-arrow-right-center {
+    top: 50%;
+    right: -8px;
+    transform: translateY(-50%);
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid #F35959;
+  }
+  .tooltip-arrow-right-top {
+    top: 24px;
+    right: -8px;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid #F35959;
+  }
+  .tooltip-arrow-right-bottom {
+    bottom: 24px;
+    right: -8px;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 12px solid #F35959;
+  }
+  .tooltip-arrow-left-center {
+    top: 50%;
+    left: -8px;
+    transform: translateY(-50%);
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 12px solid #F35959;
+  }
+  .tooltip-arrow-left-top {
+    top: 24px;
+    left: -8px;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 12px solid #F35959;
+  }
+  .tooltip-arrow-left-bottom {
+    bottom: 24px;
+    left: -8px;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 12px solid #F35959;
+  }
+  
+  /* ====== Animation States ====== */
+  .tooltip-animating {
+    transition: left 0.35s cubic-bezier(.4,0,.2,1), top 0.35s cubic-bezier(.4,0,.2,1), opacity 0.2s;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  .tooltip-hide-arrow .tooltip-arrow {
+    display: none !important;
+  }
+  .hotspot-animating {
+    transition: left 0.35s cubic-bezier(.4,0,.2,1), top 0.35s cubic-bezier(.4,0,.2,1), width 0.35s, height 0.35s;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  
+  @keyframes hotspotColorPulseRed { 
+    0% { 
+      box-shadow: 0 0 8px 0 rgba(243, 89, 89, 1); 
+      border-color: #F35959;
+    } 
+    50% { 
+      box-shadow: 0 0 16px 2px rgba(243, 89, 89, 0.5); 
+      border-color: #F35959;
+    } 
+    100% { 
+      box-shadow: 0 0 8px 0 rgba(243, 89, 89, 1); 
+      border-color: #F35959;
+    } 
+  }
+  
+  @keyframes hotspotColorPulseWhite {
+    0% {
+      box-shadow: 0 0 8px 0 rgba(255, 255, 255, 1);
+    }
+    50% {
+      box-shadow: 0 0 16px 2px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+      box-shadow: 0 0 8px 0 rgba(255, 255, 255, 1); 
+    }
+  }
+  
+  @keyframes hotspotPulseScale {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+  @keyframes hotspotPulseAttention {
+    0% {
+      opacity: 1;
+      box-shadow: 0 0 8px 0 rgb(201, 29, 55);
+    }
+    50% {
+      opacity: 0.7;
+      box-shadow: 0 0 16px 0 rgb(201, 29, 55), 0 0 24px 0 rgba(201, 29, 55, 0.5);
+    }
+    100% {
+      opacity: 1;
+      box-shadow: 0 0 8px 0 rgb(201, 29, 55);
+    }
+  }
+  
+  /* ====== Responsive ====== */
+  @media (max-width: 600px) {
+    .tooltip {
+      width: 280px;
+      font-size: 13px;
+    }
+    .tooltip-title {
+      font-size: 14px;
+    }
+    .tooltip-actions .prev,
+    .tooltip-actions .next {
+      font-size: 12px;
+      height: 28px;
+    }
+    .tooltip-actions .next {
+      padding: 3px 8px;
+    }
+    .tooltip-mascot {
+      width: 80px;
+    }
+    .tooltip-mascot-left {
+      margin-right: 15px;
+    }
+    .tooltip-mascot-right {
+      margin-left: 15px;
+    }
+  }
+  
+  /* Дополнительные стили для очень маленьких экранов */
+  @media (max-width: 480px) {
+    .tooltip-mascot {
+      width: 70px;
+    }
+    .tooltip-mascot-left {
+      margin-right: 12px;
+    }
+    .tooltip-mascot-right {
+      margin-left: 12px;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .tooltip-mascot {
+      width: 60px;
+    }
+    .tooltip-mascot-left {
+      margin-right: 10px;
+    }
+    .tooltip-mascot-right {
+      margin-left: 10px;
+    }
+  }

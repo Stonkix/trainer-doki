@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подписание ЭТрН Т2 - Шаг 5</title>
+    <link rel="stylesheet" href="styles/scenariopagestyle.css">
+    <style>
+        .tooltip-show { background-color: #7c5cfc !important; }
+        .hotspot { 
+            position: absolute; 
+            cursor: pointer; 
+            border: 2px solid rgba(124, 92, 252, 0.5); 
+            background: rgba(124, 92, 252, 0.2); 
+            display: none; 
+            z-index: 100;
+            animation: pulse 2s infinite ease-in-out;
+            transform-origin: center;
+            border-radius: 4px;
+            pointer-events: auto !important;
+        }
+        .hotspot:hover { background: rgba(124, 92, 252, 0.4); }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+            100% { transform: scale(1); opacity: 0.6; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-buttons">
+            <button class="nav-button" id="prev-button" onclick="window.location.href='etrn_t2_4.html'">
+                <img src="assets/icons/arrowLeft.svg" alt="Назад">
+            </button>
+            <button class="nav-button" id="home-button" onclick="window.location.href='index.html'">
+                <img src="assets/icons/exitButton.svg" alt="На главную">
+            </button>
+            <button class="nav-button" id="next-button" onclick="window.location.href='index.html'">
+                <img src="assets/icons/arrowRight.svg" alt="Вперёд">
+            </button>
+        </div>
+        <div class="logo-and-title">
+            <div class="logo">
+                <img src="Icon_Astal_Docs_color_v1.png" alt="Логотип">
+            </div>
+            <div class="header-title">Доки</div>
+        </div>
+        <div class="nav-buttons"></div>
+    </header>
+    <div class="background-container">
+        <div class="image-wrapper">
+            <img src="images/etrn_t2_5.png" id="step-img" alt="Экран 5">
+            <div class="hotspot-container" id="hotspot-container">
+                <div class="tooltip tooltip-show" id="main-tooltip" style="left: 50%; top: 40%; transform: translate(-50%, -50%) scale(1); opacity: 1; z-index: 20;">
+                    <div class="tooltip-title" id="tooltip-title"></div>
+                    <div class="tooltip-inner" id="tooltip-inner"></div>
+                    <div class="tooltip-actions">
+                        <button class="next" id="dialogue-next-button" onclick="handleNext()">Далее</button>
+                    </div>
+                    <img src="assets/icons/mascotHappyRight.svg" class="tooltip-mascot tooltip-mascot-left mascot-show" alt="Маскот">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const steps = [
+            { title: "", content: "<p>Накладная успешно подписана и отправлен второй титул. Статус накладной изменится на “Ожидается приемка”. Этап “Погрузка” пройден\n</p>", x: 65.9, y: 41.64 },
+            { title: "", content: "<p>Приятной работы в Доки! </p>", x: 61.88, y: 37.77 }
+        ];
+        const clickZones = [];
+        let currentStep = 0;
+        function handleNext() {
+            const titleEl = document.getElementById('tooltip-title');
+            const contentEl = document.getElementById('tooltip-inner');
+            const tooltip = document.getElementById('main-tooltip');
+            const btn = document.getElementById('dialogue-next-button');
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                contentEl.style.opacity = 0;
+                titleEl.style.opacity = 0;
+                setTimeout(() => {
+                    titleEl.textContent = steps[currentStep].title;
+                    contentEl.innerHTML = steps[currentStep].content;
+                    titleEl.style.visibility = steps[currentStep].title ? 'visible' : 'hidden';
+                    tooltip.style.left = steps[currentStep].x + '%';
+                    tooltip.style.top = steps[currentStep].y + '%';
+                    contentEl.style.opacity = 1;
+                    titleEl.style.opacity = 1;
+                    btn.textContent = currentStep === steps.length - 1 ? 'Завершить' : 'Далее';
+                }, 250);
+            } else {
+                window.location.href = 'end.html';
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const titleEl = document.getElementById('tooltip-title');
+            const contentEl = document.getElementById('tooltip-inner');
+            const tooltip = document.getElementById('main-tooltip');
+            const btn = document.getElementById('dialogue-next-button');
+            titleEl.textContent = steps[0].title;
+            contentEl.innerHTML = steps[0].content;
+            titleEl.style.visibility = steps[0].title ? 'visible' : 'hidden';
+            tooltip.style.left = steps[0].x + '%';
+            tooltip.style.top = steps[0].y + '%';
+            btn.textContent = steps.length === 1 ? 'Завершить' : 'Далее';
+            const container = document.getElementById('hotspot-container');
+            clickZones.forEach(z => {
+                const div = document.createElement('div');
+                div.className = 'hotspot';
+                div.style.left = z.x + '%';
+                div.style.top = z.y + '%';
+                div.style.width = z.w + '%';
+                div.style.height = z.h + '%';
+                div.onclick = () => window.location.href = z.action;
+                container.appendChild(div);
+            });
+        });
+    </script>
+</body>
+</html>
