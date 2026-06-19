@@ -92,17 +92,18 @@
     z-index: 3;
     pointer-events: none;
   }
-  .hotspot {
-    position: absolute;
-    box-sizing: border-box;
-    pointer-events: none;
-    border-radius: 4px;
-    border: 1px solid #F35959;
-    box-shadow: 0 0 8px 0 rgb(201, 29, 55);
-    animation: hotspotColorPulseBlue 2s infinite;
-    background: transparent;
-    overflow: visible !important;
-  }
+    .hotspot {
+      position: absolute;
+      box-sizing: border-box;
+      pointer-events: auto;
+      border-radius: 4px;
+      border: 1px solid #F35959;
+      box-shadow: 0 0 8px 0 rgb(201, 29, 55);
+      animation: hotspotColorPulseBlue 2s infinite;
+      background: transparent;
+      overflow: visible !important;
+      z-index: 100;
+    }
   
   /* ====== Tooltip Styles ====== */
   .tooltip {

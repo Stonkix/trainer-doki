@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mobile_2_7</title>
+    <link rel="stylesheet" href="./styles/scenariopagestyle.css">
+    <style>
+        .tooltip-show { background-color: #7c5cfc !important; }
+        .hotspot { 
+            position: absolute; 
+            cursor: pointer; 
+            border: 2px solid rgba(124, 92, 252, 0.5); 
+            background: rgba(124, 92, 252, 0.2); 
+            display: none; 
+            z-index: 100;
+            animation: pulse 2s infinite ease-in-out;
+            transform-origin: center;
+            border-radius: 4px;
+            pointer-events: auto !important;
+        }
+        .hotspot:hover { background: rgba(124, 92, 252, 0.4); }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+            100% { transform: scale(1); opacity: 0.6; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav-buttons">
+            <button class="nav-button" onclick="window.location.href='./index.html'">
+                <img src="./assets/icons/arrowLeft.svg" alt="Назад">
+            </button>
+            <button class="nav-button" onclick="window.location.href='./index.html'">
+                <img src="./assets/icons/exitButton.svg" alt="На главную">
+            </button>
+            <button class="nav-button" onclick="window.location.href='mobile_2_8.html'">
+                <img src="./assets/icons/arrowRight.svg" alt="Вперёд">
+            </button>
+        </div>
+        <div class="logo-and-title">
+            <div class="logo">
+                <img src="./Icon_Astal_Docs_color_v1.png" alt="Логотип">
+            </div>
+            <div class="header-title">Доки</div>
+        </div>
+        <div class="nav-buttons"></div>
+    </header>
+    <div class="background-container">
+        <div class="image-wrapper">
+            <img src="./images/mobile_2_7.png" id="step-img" alt="Экран">
+            <div class="hotspot-container" id="hotspot-container">
+                <div class="tooltip tooltip-show" id="main-tooltip" style="left: 50%; top: 40%; transform: translate(-50%, -50%) scale(1); opacity: 1; z-index: 20;">
+                    <div class="tooltip-title" id="tooltip-title"></div>
+                    <div class="tooltip-inner" id="tooltip-inner"></div>
+                    <div class="tooltip-actions">
+                        <button class="next" id="dialogue-next-button" onclick="handleNext()">Далее</button>
+                    </div>
+                    <img src="./assets/icons/mascotRight.svg" class="tooltip-mascot tooltip-mascot-left mascot-show" alt="Маскот">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const steps = [{"title": "", "content": "<p>\u0417\u0430\u043f\u043e\u043b\u043d\u0438\u0442\u0435 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439. \u0427\u0442\u043e\u0431\u044b \u0443\u043a\u0430\u0437\u0430\u0442\u044c \u043f\u0440\u0438\u0447\u0438\u043d\u0443, \u043d\u0430\u0436\u043c\u0438\u0442\u0435 \u043d\u0430 \u043f\u043e\u043b\u0435 \u041f\u0440\u0438\u0447\u0438\u043d\u0430 \u043e\u0442\u043c\u0435\u0442\u043a\u0438</p>", "x": 20.8, "y": 30.63}];
+        const clickZones = [{"x": 37.82, "y": 47, "w": 24.1, "h": 7.29, "action": "mobile_2_8.html"}];
+        let currentStep = 0;
+        function handleNext() {
+            const titleEl = document.getElementById('tooltip-title');
+            const contentEl = document.getElementById('tooltip-inner');
+            const tooltip = document.getElementById('main-tooltip');
+            const btn = document.getElementById('dialogue-next-button');
+            
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                contentEl.style.opacity = 0;
+                titleEl.style.opacity = 0;
+                setTimeout(() => {
+                    titleEl.textContent = steps[currentStep].title;
+                    contentEl.innerHTML = steps[currentStep].content;
+                    titleEl.style.visibility = steps[currentStep].title ? 'visible' : 'hidden';
+                    tooltip.style.left = steps[currentStep].x + '%';
+                    tooltip.style.top = steps[currentStep].y + '%';
+                    contentEl.style.opacity = 1;
+                    titleEl.style.opacity = 1;
+                    if (currentStep === steps.length - 1 && 'false' === 'true') {
+                        btn.textContent = 'Завершить';
+                    } else {
+                        btn.textContent = 'Далее';
+                    }
+                }, 250);
+            } else {
+                if ('false' === 'true') {
+                    window.location.href = 'end.html';
+                } else {
+                    tooltip.style.display = 'none';
+                    document.querySelectorAll('.hotspot').forEach(h => h.style.display = 'block');
+                }
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const titleEl = document.getElementById('tooltip-title');
+            const contentEl = document.getElementById('tooltip-inner');
+            const tooltip = document.getElementById('main-tooltip');
+            const btn = document.getElementById('dialogue-next-button');
+            titleEl.textContent = steps[0].title;
+            contentEl.innerHTML = steps[0].content;
+            titleEl.style.visibility = steps[0].title ? 'visible' : 'hidden';
+            tooltip.style.left = steps[0].x + '%';
+            tooltip.style.top = steps[0].y + '%';
+
+            if (steps.length === 1 && 'false' === 'true') {
+                btn.textContent = 'Завершить';
+            } else {
+                btn.textContent = 'Далее';
+            }
+
+            const container = document.getElementById('hotspot-container');
+            clickZones.forEach(z => {
+                const div = document.createElement('div');
+                div.className = 'hotspot';
+                div.style.left = z.x + '%';
+                div.style.top = z.y + '%';
+                div.style.width = z.w + '%';
+                div.style.height = z.h + '%';
+                div.onclick = () => window.location.href = z.action;
+                container.appendChild(div);
+            });
+        });
+    </script>
+</body>
+</html>
