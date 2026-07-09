@@ -65,12 +65,19 @@ $arItem = [
 
                 </li>
                 <li class="pb-16">
+    
+                        <a class="shadow-sm btn btn-outline-<?= $arItem['COLOR'] ?>"
+                           target="_blank" href="/trainer/astraldocs/create.html">Как создать в 1С поступление</a>
+    
+                    </li>
+                <li class="pb-16">
+    
+                        <a class="shadow-sm btn btn-outline-<?= $arItem['COLOR'] ?>"
+                           target="_blank" href="/trainer/astraldocs/epd.html">ЭПД в Доки</a>
+    
+                    </li>
+                </ul>
 
-                    <a class="shadow-sm btn btn-outline-<?= $arItem['COLOR'] ?>"
-                       target="_blank" href="/trainer/astraldocs/create.html">Как создать в 1С поступление</a>
-
-                </li>
-            </ul>
         </div>
     </div>
 <?php
