@@ -7,51 +7,297 @@
     <link rel="icon" type="image/png" href="Icon_Astal_Docs_color_v1.png">
     <title>ЭПД в Доки - Тренажер</title>
     <style>
-      .content {
-        flex-direction: column !important;
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat", sans-serif;
+        background: #F4F1FF;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .page-wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      .top-section {
+        background: linear-gradient(180deg, #7B61FF 0%, #9D8BFF 100%);
+        padding: 60px 20px;
+        text-align: center;
+        color: white;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        position: relative;
+        padding-bottom: 100px;
+      }
+
+      .pill {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        padding: 4px 16px;
+        border-radius: 20px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+
+      .top-section h1 {
+        font-size: 36px;
+        margin: 0 0 10px 0;
+        font-weight: 700;
+      }
+
+      .top-section p {
+        font-size: 18px;
+        opacity: 0.9;
+        margin: 0;
+      }
+
+      .main-container {
+        max-width: 1200px;
+        margin: -60px auto 40px auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+       justify-content: center;
+        gap: 30px;
+        z-index: 10;
+      }
+
+      .platform-column {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease;
+      }
+
+      .platform-header {
+        padding: 25px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .platform-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 14px;
+        flex-shrink: 0;
+      }
+
+      .platform-icon img {
+        width: 70%;
+        height: 70%;
+        object-fit: contain;
+      }
+
+      .platform-info h2 {
+        font-size: 18px;
+        margin: 0;
+        font-weight: 700;
+        color: #333;
+      }
+
+      .platform-info p {
+        font-size: 13px;
+        margin: 0;
+        color: #777;
+      }
+
+      .scenario-list {
+        padding: 10px 20px 25px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .scenario-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 12px;
+        border-radius: 12px;
+        text-decoration: none;
+        color: inherit;
+        transition: background 0.2s ease;
+        cursor: pointer;
+        border: 1px solid transparent;
+      }
+
+      .scenario-item:hover {
+        background: #f9f9f9;
+        border-color: #eee;
+      }
+
+      .scenario-badge {
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 10px;
+        font-weight: bold;
+        flex-shrink: 0;
+      }
+
+      .scenario-text h3 {
+        font-size: 15px;
+        margin: 0;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .scenario-text p {
+        font-size: 12px;
+        margin: 0;
+        color: #888;
+      }
+
+      /* Theme: 1C (Yellow) */
+      .theme-1c .platform-header { background-color: #FFFBF0; }
+      .theme-1c .platform-icon { background-color: #FAD02C; color: white; }
+      .theme-1c .scenario-badge { background-color: #FFF4B3; color: #B8860B; }
+
+      /* Theme: Web (Purple) */
+      .theme-web .platform-header { background-color: #F8F7FF; }
+      .theme-web .platform-icon { background-color: #6746EB; color: white; }
+      .theme-web .scenario-badge { background-color: #E8E4FF; color: #6746EB; }
+
+      /* Theme: Mobile (Green) */
+      .theme-mobile .platform-header { background-color: #F7FBF7; }
+      .theme-mobile .platform-icon { background-color: #76B947; color: white; }
+      .theme-mobile .scenario-badge { background-color: #E9F5E9; color: #4A7729; }
+
+      .footer-hint {
+        text-align: center;
+        margin-top: 40px;
+        font-size: 14px;
+        color: #888;
+        padding-bottom: 40px;
+      }
+
+      .back-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        opacity: 0.8;
+        transition: opacity 0.2s;
+      }
+      .back-btn:hover { opacity: 1; }
+
+      @media (max-width: 992px) {
+        .main-container {
+          grid-template-columns: 1fr;
+          margin-top: -40px;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <header class="header">
-        <div class="logo-and-title">
-          <div class="logo">
-            <img src="Icon_Astal_Docs_color_v1.png" alt="Логотип Доки">
-          </div>
-          <div class="header-title">Доки</div>
-        </div>
-      </header>
-
-      <div class="header-bottom">
-        <div class="header-bottom-text">ЭПД в Доки</div>
+    <div class="page-wrapper">
+      <div class="top-section">
+        <a href="./index.html" class="back-btn">← Назад</a>
+        <div class="pill">ИНТЕРАКТИВНЫЙ ТРЕНАЖЁР</div>
+        <h1>Работа с ЭТрН в Доки</h1>
+        <p>Выберите платформу и сценарий для изучения</p>
       </div>
 
-      <main class="content">
-        <div class="card-grid">
-          <div class="card" style="margin-bottom: 20px;">
-            <a href="./index.html" class="card-button">← Вернуться в главное меню</a>
-          </div>
-          <div class="card">
-            <a href="./etrn_t1_1.html" class="card-button">Загрузка и подписание ЭТрН Т1 грузоотправителем в веб-кабинете Доки</a>
-          </div>
-          <div class="card">
-            <a href="./etrn_t2_1.html" class="card-button">Подписание ЭТрН Т2 грузоперевозчиком в веб-кабинете Доки</a>
-          </div>
-          <div class="card">
-            <a href="./etrn_t4_1.html" class="card-button">Подписание ЭТрН Т4 грузоперевозчиком в веб-кабинете Доки</a>
-          </div>
-            <div class="card">
-                <a href="./mobile_1_1.html" class="card-button">Авторизация водителя в мобильной версии Доки</a>
+      <div class="main-container">
+
+        <!-- В веб-кабинете -->
+        <div class="platform-column theme-web">
+          <div class="platform-header">
+            <div class="platform-icon">
+              <img src="assets/icons/browser.png" alt="Браузер">
             </div>
-            <div class="card">
-                <a href="./mobile_2_1.html" class="card-button">Подписание ЭТрН Т2 водителем в мобильной версии Доки</a>
+            <div class="platform-info">
+              <h2>В веб-кабинете</h2>
+              <p>В браузере на компьютере</p>
             </div>
-           <div class="card">
-             <a href="./etrn_t3_1.html" class="card-button">Подписание ЭТрН Т3 грузополучателем в веб-кабинете Доки</a>
-           </div>
+          </div>
+          <div class="scenario-list">
+            <a href="./etrn_t1_1.html" class="scenario-item">
+              <div class="scenario-badge">Т1</div>
+              <div class="scenario-text">
+                <h3>Отгрузка</h3>
+                <p>Грузоотправитель</p>
+              </div>
+            </a>
+            <a href="./etrn_t2_1.html" class="scenario-item">
+              <div class="scenario-badge">Т2</div>
+              <div class="scenario-text">
+                <h3>Погрузка</h3>
+                <p>Грузоперевозчик</p>
+              </div>
+            </a>
+            <a href="./etrn_t3_1.html" class="scenario-item">
+              <div class="scenario-badge">Т3</div>
+              <div class="scenario-text">
+                <h3>Приёмка</h3>
+                <p>Грузополучатель</p>
+              </div>
+            </a>
+            <a href="./etrn_t4_1.html" class="scenario-item">
+              <div class="scenario-badge">Т4</div>
+              <div class="scenario-text">
+                <h3>Подтверждение доставки</h3>
+                <p>Грузоперевозчик</p>
+              </div>
+            </a>
+          </div>
         </div>
-      </main>
+
+        <!-- С мобильного -->
+        <div class="platform-column theme-mobile">
+          <div class="platform-header">
+            <div class="platform-icon">
+              <img src="assets/icons/mobile-phone.png" alt="Мобильный">
+            </div>
+            <div class="platform-info">
+              <h2>С мобильного</h2>
+              <p>Мобильное приложение для водителя</p>
+            </div>
+          </div>
+          <div class="scenario-list">
+            <a href="./mobile_1_1.html" class="scenario-item">
+              <div class="scenario-badge"><img src="assets/icons/key.png" alt="Ключ" style="width: 70%; height: 70%; object-fit: contain;"></div>
+              <div class="scenario-text">
+                <h3>Авторизация в приложении</h3>
+                <p>Водитель</p>
+              </div>
+            </a>
+            <a href="./mobile_2_1.html" class="scenario-item">
+              <div class="scenario-badge">Т2</div>
+              <div class="scenario-text">
+                <h3>Погрузка</h3>
+                <p>Грузоперевозчик (водитель)</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-hint">Нажмите на сценарий, чтобы начать прохождение</div>
     </div>
   </body>
 </html>

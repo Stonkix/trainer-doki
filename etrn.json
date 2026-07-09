@@ -1,238 +1,238 @@
 [
-  {
-    "id": "hs4d4d",
-    "label": "etrn_t1_1",
-    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAYAAACQvstyAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwBcb51JREFUeAHs/T/std1yHYatOVckL0kVEQEJiFJEcapIXSSnsAxIAW+K0FEV0lUYVVJhIE4RGeqk0J0CpXAaA1QTOe4uOyVMYRKQAKkSpM5MZYFNLEAMRDWM2fBM3vPMrDVr9jnvFWNL1P2++5x73+93zvPsP7NnZq2Zvc/e54m/+gv5ROD1CuSX/0V/mvd53ZtXfvkQ18UvbzLhL5ZddViONz681ObRN6zKtHd29Gr/2XV2Xbbl48OnvpZsWcN6dDv5Sb7qN3KPfsvQ5dQ/xc5DDXMn/KN6MvlcCZeQlOXxRZZpt8qbDcOq5ocxuy7V+Wddul0CJtOr/KUT/rX28n24b3b9pBKcOts2TlPK1dV//08A/+Hf2G399m8Bv/xLyC9/Y/kD3n3y9AP16bL0vRj/0L2vOW3u+jOm8ceP94DDN99fH33T5T5ssPH8jo8b/zf+V7m38fHTDyH+3S+XA23bAD8C+P/eLyC+/Ht7/de/Cfzn/2fgn/8z3Pi/8b9FuPH/rcE/7viPG/83/m/848b/jzD+f/E/Av7Un5nu/tHfBb7/n2573Ph/6/fG/43/bwX+qV+Jecd/4Mb/lL/xf+MfN/7fPt/4v/GPG//q+c0u1ezX8f+l+Jc3JWfiGEXOmM2aLYTAnV+aiS//+fL/Us6XP33t9UE4Dw6xVe8EcPXWda6/dWEp9Hw/0pQ49a7b6MEvP4vSx+oTS4YUZ1TZ63N97PczANpSCs7TUuwiWufStW6G5GlIX21U38MJpdeUi2dLHByij7kUHdRd6TlMFhztkIBKvqVbe9Ewasj9jswRDpJN/Ff7B/fk2IX2brhSXz7Ojboo/Bem6spR5/W27q/oMXZtw9IuSy8tE+sSIxEZOPTSKjiua8yy9+MRhv8qP3JsT7Tr5y21+6nchcEP+D/bnXoWLtv+tKD8u3xfgXPex8J/fYgu3z7Y+qV/hJGj/A2CzvhHBSS6ZgkiOwknrCOBYVjjexVqYdWGtZnTUnPEo/3A27cws+CQ8SnQzmvwyc/sKgQ/Nt/lkQdLlf4Og7YSzvKG7TexXveeX64+Vh351KYu+xALs/SzpoGu+AxDPDw9ebX/zAZW+4aMXW3V+Bp34Q7Y/rUUUqpAGTPJkSPfJVoq/nv8oy3DOBxv+D/pj6rIWPoyvsL5In9/jP85Q2xfclnTh3S4YA95Y0+Ksc/2PgbjFwDs7/Y9ZyL6d3yOwy2nrlhAeedXwMXouk4qMHAxKD4ZPATgd8Jo/XtMdMXOwEfEow1PvmkMxQlMTlP5jScpzXctrprDvKRAcqh6kh5JpXZjpy5p+H+Pu69yg2ULRpb/+5ThUDONYuVO15de8RU/g/EgS2PTyOVjT0yceMv/fXyl01z3N74UU2N1vur0+DcuSVj0zykH1wtz2TzGIz9rYpX/xY6zU4TxP0rWHJdAu+nEy4nHvN4yjxDA1+N/bseZGLz1tvL/Bam0PMd4y3JX8s7EYfUcWLkb24/x6o69089bPM9txpNr38f/7ns7P/6UR36Cf1psPvAx2MOOtz1Gs8ynF8c1ttVwMX4zMiw9uHIBeF71zlXTp8f/rbsP48PncueLfDjxKYQ9CzhuU4xirvj/zPe5p3y9A04qKRo+Y/w/7P56/8qpC+zKN6fOy3IPi13G71f5R5p/knO+Fv9poNbr48VnF1Cyw9L2qxidXrz35fX4zpfCTwsJEMZCMaJFfeVKr7nLNNhSRkvaweTVXjzeyX3ZegekS/fPZ7WfbZs1KdVw33OoRUWDm8mlLp0jKJfj37m44kHK0ImTm2J0Ldu98Q7rkHNallxzQg39... (truncated for brevity)",
-    "nextStepId": null,
-    "steps": [
-      {
-        "id": "lnp2k0",
-        "title": "Шаг №1",
-        "content": "<p>Приветствуем вас в сервисе электронного документооборота и электронных перевозочных документов Доки.</p>",
-        "mascot": "m_custom_yt83sl",
-        "x": 64.14,
-        "y": 66.92,
-        "mascotSide": "left",
-        "mascotX": 47.68,
-        "mascotY": 60.48
-      },
-      {
-        "id": "u3w85f",
-        "title": "Шаг №2",
-        "content": "<p>В сервисе Доки можно работать как с УПД, актами, накладными, так и с перевозочными документами</p>",
-        "mascot": "m_custom_yt83sl",
-        "x": 64.14,
-        "y": 65.14,
-        "mascotSide": "left",
-        "mascotX": 47.68,
-        "mascotY": 60.48
-      },
-      {
-        "id": "v1ijc8",
-        "title": "Шаг №3",
-        "content": "<p>Для начала работы грузоотправителю необходимо будет сформировать транспортную накладную, затем загрузить ее в сервис Доки и отправить - это будет первый титул транспортной накладной. Создание ЭТрН пока что доступно только из 1С или иных учетных систем. В веб-кабинете Доки возможность создать и отредактировать первой титул ЭТрН появится позднее, следите за обновлениями!</p>",
-        "mascot": "m_custom_yt83sl",
-        "x": 63.97,
-        "y": 75.85,
-        "mascotSide": "left",
-        "mascotX": 47.68,
-        "mascotY": 60.48
-      },
-      {
-        "id": "lpafai",
-        "title": "Шаг №4",
-        "content": "<p>Сейчас мы загрузим и отправим транспортную накладную в веб-кабинете сервиса Доки.</p>",
-        "mascot": "m_custom_zmpzyn",
-        "x": 22.72,
-        "y": 80.76,
-        "mascotSide": "left",
-        "mascotX": 35.3,
-        "mascotY": 76.69
-      }
-    ],
-    "clickZones": [
-      {
-        "x": 4.1,
-        "y": 89.39,
-        "w": 20.08,
-        "h": 6.54,
-        "action": "Шаг2"
-      }
-    ]
-  },
-  {
-    "id": "mcx8ji",
-    "label": "etrn_t1_2",
-    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAYAAACQvstyAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAC0ZdJREFUeAHs/X2wZOV9J3g+xXsVWKhVbiHbiJ6WOnCPNgT07MsYDB0zkmF3BeGwPLJFCKu9YiPcBukPhRtNw64XQsQ6oANaq+gJg1fRQa9blgKNPS13q9DuIEsxsyDoid6YFjDLrmtG7TZi28JtZBBUFS/i3q1vUr/LqayTb/dm3pt57+cTkZV5M8/Lc55zbp6nbpzv+e1bP64BAAAAAAAAAAAAAAAAAABL4bQGAAAAAAAAAAAAAAAAAAAsDQFgAAAAAAAAAAAAAAAAAABYIgLAAAAAAAAAAAAAAAAAAACwRASAAQAAAAAAAAAAAAAAAABgiQgAAwAAAAAAAAAAAAAAAADAEhEABgAAAAAAAAAAAAAAAACAJSIADAAAAAAAAAAAAAAAAAAAS0QAGAAAAAAAAAAAAAAAAAAAlogAMAAAAAAAAAAAAAAAAAAALBEBYAAAAAAAAAAAAAAAAAAAWCICwAAAAAAAAAAAAAAAAAAAsEQEgAEAAAAAAAAAAAAAAAAAYIkIAAMAAAAAAAAAAAAAAAAAwBIRAAYAAAAAAAAAAAAAAAAAgCUiAAwAAAAAAAAAAAAAAAAAAEtEABgAAAAAAAAAAAAAAAAAAJaIADAAAAAAAAAAAAAAAAAAACwRAWAAAAAAAAAAAAAAAAAAAFgiAsAAAAAAAAAAAAAAAAAAALBEzmgAAAAAAAAAAAAAAAAAe8DRI+vt8BOvtR88t9a+92/eaM9///jjuTcGnz1//L2uA+fua+9412nHn09rB991env3e05vF77njHbh3zhj8BkALNK+9eMaAAAAAAAAAAAAAAAAwC6TwO+z/9OP2ncef7U98dhrp4R8N+vC9yYQfEa79Iqz2mVXnN0AYN4EgAEAAAAAAAAAAAAAAIBd5fATr7fH/+jV9sS3Xx2EgBcp1YATBL786nPaxZee2QBgHgSAAQAAAAAAAAAAAAAAgJWXoO+3/tmx9q2vHlt46HeUgxec1q77+IFBGBgAtkIAGAAAAAAAAAAAAAAAAFhZyxD8HZYg8Ac+vL998PgDADZDABgAAAAAAAAAAAAAAABYSd957NX2+79zpD3/3FpbRioCA7BZAsAAAAAAAAAAAAAAAADASkng93fvfakdfvL1tgouveKs9su/ft4gEAwA0xAABgAAAAAAAAAAAAAAAFbGt756rB364tF29MhqxaL2n7ev/fKvn6saMABTEQAGAAAAAAAAAAAAAAAAll4Cvwn+JgC8yj74C+e0X7rpvAYA4wgAAwAAAAAAAAAAAMAKeeqppwaP888/v1177bVTz/fQQw+1F198sV100UXtyiuvPOmzZ555pj366KNtM/qWN0l3fdmGbMs41fZpp4d5quNv1t+53WzSd0b6Ko9ZvxsAxnn+ubV2/2dfbM9+9422G1z43tPbTXec3w5ecFpbVjXunNZmxoXsPV/+8pfHfp7j6P3vf78x/4LVeG54jDvqfXbGGQ0AAAAAAAAAAAAAWBkJI959992DC+OnvSA7F9nffPPNg9cf+9jHTglm5ALv+nxWWdahQ4dmmqe7vieffHLsxf3Z1jzi1ltvFQRgWyUAccMNN2z8/Kd/+qeOwfZmv0zznZHvqXzn5HcXYCsS/v3cZ14YPO8WCTJnm37jnrcvbQi4xp3T2sy4kL1n2v931Bgi4wnmr8ZzGdt2/0+W/zvm9z6/zwLAO08AGAAAAAAAAAAAAAB2sVzYfdttt009/bQX2KcialXlXZTh8K8QIdttuMrt/fff7zgcMuo7I989eeR3OAGyRx55pAFsxm4M/5batmUOAZdpxohuksEscrz0... (truncated for brevity)",
-    "nextStepId": null,
-    "steps": [
-      {
-        "id": "s8q47y",
-        "title": "",
-        "content": "<p>Нажмите «Добавить документ»</p>",
-        "mascot": "m_custom_zmpzyn",
-        "x": 22.47,
-        "y": 14.71,
-        "mascotSide": "left",
-        "mascotX": 31.78,
-        "mascotY": 8.42
-      }
-    ],
-    "clickZones": [
-      {
-        "x": 1.17,
-        "y": 8.03,
-        "w": 11.8,
-        "h": 4.46,
-        "action": "Шаг3"
-      }
-    ]
-  },
-  {
-    "id": "0i35r9",
-    "label": "Шаг 3",
-    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAYAAACQvstyAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAFeRhJREFUeAHs3W+wbGddJ/pnn/xHwjmAA4SLCXG8wXhNEFBKKMKf1MW6pcDMAPNiiFMiUjXDnyql4AW80qmaKqkaLccXwJugMyUwLwZFhyQ1pXfAAQYsGYjkqJHonZCohMhgEhOSc3KS3ff8ep+n99PPftaf7t29z/7z+Tid7l7rWc9avf7sPjyzvv3buPnmmycJAAAAAAAAAAAAAAAAAADYF44lAAAAAAAAAAAAAAAAAABg3xAABgAAAAAAAAAAAAAAAACAfUQAGAAAAAAAAAAAAAAAAAAA9hEBYAAAAAAAAAAAAAAAAAAA2EcEgAEAAAAAAAAAAAAAAAAAYB8RAAYAAAAAAAAAAAAAAAAAgH1EABgAAAAAAAAAAAAAAAAAAPYRAWAAAAAAAAAAAAAAAAAAANhHBIABAAAAAAAAAAAAAAAAAGAfEQAGAAAAAAAAAAAAAAAAAIB9RAAYAAAAAAAAAAAAAAAAAAD2EQFgAAAAAAAAAAAAAAAAAADYRwSAAQAAAAAAAAAAAICpjY2NtbTdK/txm/baMvvAfiO4/g8+1z/Lcv0ffK5/luX6P/hc/4ebADAAAAAAAAAAAAAAR9JBu+l5L7Z3MpmstO3YbV7VZ1t2m+ppe31ujFnf2G1a5BjuZpkx9vM15vrfyfXf3WadXP97z/W/k+u/u806uf73nut/J9d/d5t1cv0zlgAwAAAAAAAAAAAAAEdSedPzQbhReRU3ae/Xz7muG9DHrque1mqz233Xt/yYc/EgHv+9PK6Lcv3vH65/1/9ec/3vH65/1/9ec/3vH65/1z/jCAADAAAAAAAAAAAAsJRFbibe7zfYn68blVe93qH+FlnfKo7Z+divQ9u97OcaExxYdPndtFuGG/LbXP87uf7nuf4PL9f/Tq7/ea7/w8v1v5Prf57rn/1AABgAAAAAAAAAAACApSxSJWkdNx63qjb1raect8iN8kP99vUxtNzQ/hq7nfk599e1XLlN5XO5fH6/7P5sLds6Vl3zxuhbfnNzczqta1/s5lwc2t+t7era5339j92O3Uxf9BoY28+qrsG+Nq1zc9nzdUxb13/3uluvXf+u/7F9jt2Gerrr3/Vfvw6u/3HTXf/j1uv6719367Xr3/U/1OcyDkKl7nW7MAEAAAAAAAAAAADAiix7M/fQjb1lv/km9fLm6/y6viE7t20tV6+/1U/XNpTb0poX08s+6vUObVPZpty+1vrrdq119t2k3ddHvf6u/TlmPa2b5uvXffuldZy6PmNMiyDAIst2bUu9PUPzy2mt1/X+qOd37Yuybd/8etrQedE6L+vPVPdXb/fQTf+t7ena7tb7vn1VTnP9u/7z8q5/17/r3/U/dlnXv+vf9e/6d/3v/EyruP7rPlvzh/StZxld19V+dsEb3vCGX0oAAAAAAAAAAAAAsAf6bj7u0mqzyI27Y28uHruOrpDCIv12rWs3NyTXN4W35tc3pfeta9n9tgpD617F/ir7GdNuXX31LTd0TLuMOW8Xtcrld3v9LrItrv/t+a7/dj9j2q2rL9f/+OX6pi2y/NjlXP/nh+t/5zzXf/+0RZYfu5zr//xw/e+cd1Cv/9axKqeNWT4bu8xhpgIwAAAAAAAAAAAAACvVqviTp/e17boJejc3eA8t33eT/9jtWXT7uvZD17xl9K2j6339mYe2pW6/25vx+7ata/7QZ6gt+hnH9LlIX612Q9WzxrSrtbZ5VcdmEa3rf9HzxvW/ONd/m+t/b7n+h5cvp7n+x617Vdf/46c30/++bzN99+FJeug7T06fH31ka/6jD+cKovHv00m66JKN... (truncated for brevity)",
-    "nextStepId": null,
-    "steps": [
-      {
-        "id": "f2966v",
-        "title": "",
-        "content": "<p>В блоке ”Загрузка документа ЭПД” перенесите файл в область загрузки документов или нажмите кнопку “Загрузить”</p>",
-        "mascot": "m_custom_yt83sl",
-        "x": 55.94,
-        "y": 56.96,
-        "mascotSide": "left",
-        "mascotX": 40.23,
-        "mascotY": 48.87
-      }
-    ],
-    "clickZones": [
-      {
-        "x": 71.37,
-        "y": 61.13,
-        "w": 26.86,
-        "h": 9.22,
-        "action": "Шаг4"
-      }
-    ]
-  },
-  {
-    "id": "82gptl",
-    "label": "Шаг 4",
-    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAYAAACQvstyAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAGevNJREFUeAHs/X2wZOV9J3g+xXsVWKhVbiHbiJ6WOnCPNgT07MsYDB0zkmF3BeGwPLJFCKu9YiPcBukPhRtNw64XQsQ6oANaq+gJg1fRQa9blgKNPS13q9DuIEsxsyDoid6YFjDLrmtG7TZi28JtZBBUFS/i3q1vUr/LqayTb/dm3pt57+cTkZV5M8/Lc55zbp6nbpzv+e1bP64BAAAAAAAAAAAAAAAAAABL4bQGAAAAAAAAAAAAAAAAAAAsDQFgAAAAAAAAAAAAAAAAAABYIgLAAAAAAAAAAAAAAAAAAACwRASAAQAAAAAAAAAAAAAAAABgiQgAAwAAAAAAAAAAAAAAAADAEhEABgAAAAAAAAAAAAAAAACAJSIADAAAAAAAAAAAAAAAAAAAS0QAGAAAAAAAAAAAAAAAAAAAlogAMAAAAAAAAAAAAAAAAAAALBEBYAAAAAAAAAAAAAAAAAAAWCICwAAAAAAAAAAAAAAAAAAAsEQEgAEAAAAAAAAAAAAAAAAAYIkIAAMAAAAAAAAAAAAAAAAAwBIRAAYAAAAAAAAAAAAAAAAAgCUiAAwAAAAAAAAAAAAAAAAAAEtEABgAAAAAAAAAAAAAAAAAAJaIADAAAAAAAAAAAAAAAAAAACwRAWAAAAAAAAAAAAAAAAAAAFgiAsAAAAAAAAAAAAAAAAAAALBEzmgAAAAAAAAAAAAAAAAAe8DRI+vt8BOvtR88t9a+92/eaM9///jjuTcGnz1//L2uA+fua+9412nHn09rB991env3e05vF77njHbh3zhj8BkALNK+9eMaAAAAAAAAAAAAAAAAwC6TwO+z/9OP2ncef7U98dhrp4R8N+vC9yYQfEa79Iqz2mVXnN0AYN4EgAEAAAAAAAAAAAAAAIBd5fATr7fH/+jV9sS3Xx2EgBcp1YATBL786nPaxZee2QBgHgSAAQAAAAAAAAAAAAAAgJWXoO+3/tmx9q2vHlt46HeUgxec1q77+IFBGBgAtkIAGAAAAAAAAAAAAAAAAFhZyxD8HZYg8Ac+vL998PgDADZDABgAAAAAAAAAAAAAAABYSd957NX2+79zpD3/3FpbRioCA7BZAsAAAAAAAAAAAAAAAADASkng93fvfakdfvL1tgouveKs9su/ft4gEAwA0xAABgAAAAAAAAAAAAAAAFbGt756rB364tF29MhqxaL2n7ev/fKvn6saMABTEQAGAAAAAAAAAAAAAAAAll4Cvwn+JgC8yj74C+e0X7rpvAYA4wgAAwAAAAAAAAAAAMAKeeqppwaP888/v1177bVTz/fQQw+1F198sV100UXtyiuvPOmzZ555pj366KNtM/qWN0l3fdmGbMs41fZpp4d5quNv1t+53WzSd0b6Ko9ZvxsAxnn+ubV2/2dfbM9+9422G1z43tPbTXec3w5ecFpbVjXunNZmxoXsPV/+8pfHfp7j6P3vf78x/4LVeG54jDvqfXbGGQ0AAAAAAAAAAAAAWBkJI959992DC+OnvSA7F9nffPPNg9cf+9jHTglm5ALv+nxWWdahQ4dmmqe7vieffHLsxf3Z1jzi1ltvFQRgWyUAccMNN2z8/Kd/+qeOwfZmv0zznZHvqXzn5HcXYCsS/v3cZ14YPO8WCTJnm37jnrcvbQi4xp3T2sy4kL1n2v931Bgi4wnmr8ZzGdt2/0+W/zvm9z6/zwLAO08AGAAAAAAAAAAAAAB2sVzYfdttt009/bQX2KcialXlXZTh8K8QIdttuMrt/fff7zgcMuo7I989eeR3OAGyRx55pAFsxm4M/5batmUOAZdpxohuksEscrz0... (truncated for brevity)",
-    "nextStepId": null,
-    "steps": [
-      {
-        "id": "3nsrii",
-        "title": "",
-        "content": "<p>Выберите файл и нажмите “Открыть”:</p>",
-        "mascot": "m_custom_zmpzyn",
-        "x": 63.22,
-        "y": 42.38,
-        "mascotSide": "left",
-        "mascotX": 73.53,
-        "mascotY": 33.55
-      }
-    ],
-    "clickZones": [
-      {
-        "x": 33.47,
-        "y": 59.2,
-        "w": 37.06,
-        "h": 2.83,
-        "action": "Зона 2"
-      },
-      {
-        "x": 63.59,
-        "y": 70.21,
-        "w": 5.02,
-        "h": 3.12,
-        "action": "Шаг 5"
-      }
-    ]
-  },
-  {
-    "id": "rc201r",
-    "label": "Шаг 5",
-    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAYAAACQvstyAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwADdl9JREFUeAHs/X2wZOV9J3g+xXsVWKhVbiHbiJ6WOnCPNgT07MsYDB0zkmF3BeGwPLJFCKu9YiPcBukPhRtNw64XQsQ6oANaq+gJg1fRQa9blgKNPS13q9DuIEsxsyDoid6YFjDLrmtG7TZi28JtZBBUFS/i3q1vUr/LqayTb/dm3pt57+cTkZV5M8/Lc55zbp6nbpzv+e1bP64BAAAAAAAAAAAAAAAAAABL4bQGAAAAAAAAAAAAAAAAAAAsDQFgAAAAAAAAAAAAAAAAAABYIgLAAAAAAAAAAAAAAAAAAACwRASAAQAAAAAAAAAAAAAAAABgiQgAAwAAAAAAAAAAAAAAAADAEhEABgAAAAAAAAAAAAAAAACAJSIADAAAAAAAAAAAAAAAAAAAS0QAGAAAAAAAAAAAAAAAAAAAlogAMAAAAAAAAAAAAAAAAAAALBEBYAAAAAAAAAAAAAAAAAAAWCICwAAAAAAAAAAAAAAAAAAAsEQEgAEAAAAAAAAAAAAAAAAAYIkIAAMAAAAAAAAAAAAAAAAAwBIRAAYAAAAAAAAAAAAAAAAAgCUiAAwAAAAAAAAAAAAAAAAAAEtEABgAAAAAAAAAAAAAAAAAAJaIADAAAAAAAAAAAAAAAAAAACwRAWAAAAAAAAAAAAAAAAAAAFgiAsAAAAAAAAAAAAAAAAAAALBEzmgAAAAAAAAAAAAAAAAAe8DRI+vt8BOvtR88t9a+92/eaM9///jjuTcGnz1//L2uA+fua+9412nHn09rB991env3e05vF77njHbh3zhj8BkALNK+9eMaAAAAAAAAAAAAAAAAwC6TwO+z/9OP2ncef7U98dhrp4R8N+vC9yYQfEa79Iqz2mVXnN0AYN4EgAEAAAAAAAAAAAAAAIBd5fATr7fH/+jV9sS3Xx2EgBcp1YATBL786nPaxZee2QBgHgSAAQAAAAAAAAAAAAAAgJWXoO+3/tmx9q2vHlt46HeUgxec1q77+IFBGBgAtkIAGAAAAAAAAAAAAAAAAFhZyxD8HZYg8Ac+vL998PgDADZDABgAAAAAAAAAAAAAAABYSd957NX2+79zpD3/3FpbRioCA7BZAsAAAAAAAAAAAAAAAADASkng93fvfakdfvL1tgouveKs9su/ft4gEAwA0xAABgAAAAAAAAAAAAAAAFbGt756rB364tF29MhqxaL2n7ev/fKvn6saMABTEQAGAAAAAAAAAAAAAAAAll4Cvwn+JgC8yj74C+e0X7rpvAYA4wgAAwAAAAAAAAAAAMAKeeqppwaP888/v1177bVTz/fQQw+1F198sV100UXtyiuvPOmzZ555pj366KNtM/qWN0l3fdmGbMs41fZpp4d5quNv1t+53WzSd0b6Ko9ZvxsAxnn+ubV2/2dfbM9+9422G1z43tPbTXec3w5ecFpbVjXunNZmxoXsPV/+8pfHfp7j6P3vf78x/4LVeG54jDvqfXbGGQ0AAAAAAAAAAAAAWBkJI959992DC+OnvSA7F9nffPPNg9cf+9jHTglm5ALv+nxWWdahQ4dmmqe7vieffHLsxf3Z1jzi1ltvFQRgWyUAccMNN2z8/Kd/+qeOwfZmv0zznZHvqXzn5HcXYCsS/v3cZ14YPO8WCTJnm37jnrcvbQi4xp3T2sy4kL1n2v931Bgi4wnmr8ZzGdt2/0+W/zvm9z6/zwLAO08AGAAAAAAAAAAAAAB2sVzYfdttt009/bQX2KcialXlXZTh8K8QIdttuMrt/fff7zgcMuo7I989eeR3OAGyRx55pAFsxm4M/5batmUOAZdpxohuksEscrz0... (truncated for brevity)",
-    "nextStepId": null,
-    "steps": [
-      {
-        "id": "92xq69",
-        "title": "",
-        "content": "<p>Документ успешно загружен и появился в разделе «Логистика». Нажмите на загруженный документ</p>",
-        "mascot": "m_custom_yt83sl",
-        "x": 43.89,
-        "y": 9.06,
-        "mascotSide": "left",
-        "mascotX": 27.02,
-        "mascotY": 2
-      }
-    ],
-    "clickZones": [
-      {
-        "x": 14.39,
-        "y": 17.25,
-        "w": 84.34,
-        "h": 5.8,
-        "action": "ШАг 6"
-      }
-    ]
-  },
-  {
-    "id": "z3ldhq",
-    "label": "Шаг 6",
-    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAYAAACQvstyAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAEXotJREFUeAHs/X2wZGd9J3g+JfRWVbIkJIPAFvI0dMg92kCSZ1/GkqFjBiztLlI4jAcbAkx70Ua4LcEfhEdMi12vCBTrQB2oWaInLHmJDvXavASMmcbdlNgdYYiZFUie6I1pJGY145rBbgu5QQa9oqpS6aXu1DdVv6tTWSdfb957M+/9fCKyMm/meXnOc87N89SN8z2/PWvHNQAAAAAAAAAAAAAAAAAAYCmc1gAAAAAAAAAAAAAAAAAAgKUhAAwAAAAAAAAAAAAAAAAAAEtEABgAAAAAAAAAAAAAAAAAAJaIADAAAAAAAAAAAAAAAAAAACwRAWAAAAAAAAAAAAAAAAAAAFgiAsAAAAAAAAAAAAAAAAAAALBEBIABAAAAAAAAAAAAAAAAAGCJCAADAAAAAAAAAAAAAAAAAMASEQAGAAAAAAAAAAAAAAAAAIAlIgAMAAAAAAAAAAAAAAAAAABLRAAYAAAAAAAAAAAAAAAAAACWiAAwAAAAAAAAAAAAAAAAAAAsEQFgAAAAAAAAAAAAAAAAAABYIgLAAAAAAAAAAAAAAAAAAACwRASAAQAAAAAAAAAAAAAAAABgiQgAAwAAAAAAAAAAAAAAAADAEhEABgAAAAAAAAAAAAAAAACAJSIADAAAAAAAAAAAAAAAAAAAS0QAGAAAAAAAAAAAAAAAAAAAlsjpDQAAAAAAAAAAAAAAAGAXOHxorR188Pn2xGPH2vf/8qX2+A+PPx57afDZ48ff69q3f0+74HWnHX8+rV34ule1N7zxVe3iN57eLv67pw8+A4DNtGftuAYAAAAAAAAAAAAAAACwwyTw++j//GL7zgNH24P3P39KyHdeF78pgeDT2xVXn9muvPqsBgCLJgAMAAAAAAAAAAAAAAAA7CgHH3yhPfBnR9uD3z46CAFvplQDThD4qmvObpdecUYDgEUQAAYAAAAAAAAAAAAAAABWXoK+3/wXR9o3v3Jk00O/o1x40Wnt+vfvG4SBAWAjBIABAAAAAAAAAAAAAACAlbUMwd9hCQK/7Z1729uPPwBgHgLAAAAAAAAAAAAAAAAAwEr6zv1H25/84aH2+GPH2jJSERiAeQkAAwAAAAAAAAAAAAAAACslgd8/uuMn7eBDL7RVcMXVZ7bf+J1zBoFgAJiGADAAAAAAAAAAAAAAAACwMr75lSPtwGcPt8OHVisWtfecPe03fme/asAATEUAGAAAAAAAAAAAAAAAAFh6Cfwm+JsA8Cp7+6+e3X79xnMaAIwjAAwAAAAAAAAAAAAAK+S73/3u4HHeeee16667bur57rnnnvb000+3Sy65pL3lLW856bNHHnmkfetb32rz6FveJN31ZRuyLeNU26edHhapjr9Zf+d2sknfGemrPGb9bgAY5/HHjrW7Pv50e/R7L7Wd4OI3vard+LHz2oUXndaWVY07pzXPuJDd5wtf+MLYz3McvfnNbzbm32Q1nhse4456n+1xegMAAAAAAAAAAAAAVkbCiLfffvvgwvhpL8jORfY33XTT4PV73/veU4IZucC7Pp9VlnXgwIGZ5umu76GHHhp7cX+2NY+45ZZbBAHYUglAvO9971v/+a//+q8dg+3lfpnmOyPfU/nOye8uwEYk/Pupjzw1eN4pEmTONv3uJ89f2hBwjTunNc+4kN1n2v931Bgi4wkWr8ZzGdt2/0+W/zvm9z6/zwLA208AGAAAAAAAAAAAAAB2sFzY/dGPfnTq6ae9wD4VUasq72YZDv8KEbLVhqvc3nXXXY7DIaO+M/Ldk0d+hxMgu++++xrAPHZi+LfUti1zCLhMM0Z0kwxmkeOl... (truncated for brevity)",
-    "nextStepId": null,
-    "steps": [
-      {
-        "id": "4cqilb",
-        "title": "",
-        "content": "<p>Проверьте накладную и нажмите «Подписать и отправить»</p>",
-        "mascot": "m_custom_yt83sl",
-        "x": 71.59,
-        "y": 9.81,
-        "mascotSide": "left",
-        "mascotX": 55.3,
-        "mascotY": 5.59
-      }
-    ],
-    "clickZones": [
-      {
-        "x": 88.02,
-        "y": 7.73,
-        "w": 10.37,
-        "h": 5.35,
-        "action": "Шаг 7 "
-      }
-    ]
-  },
-  {
-    "id": "mnyk7q",
-    "label": "Шаг 7",
-    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAYAAACQvstyAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAET8NJREFUeAHs/X2wZGd9J3g+JfRWVbIkVDYCW8jT0CH3aAMhz76MJaOOGbC0u0jhMB5sFGDaizbCbQn+UHjEtNj1ikCxDtSB2kv0hCUv0aFeN4YQY6ZxNyV2RxhiZgXIE70xjcSsZlwztNtCbpBBr6iq9Fp36puq39WprJOvN++9mfd+PhFZmTfzvDznOefmeerG+Z7fnrXjGgAAAAAAAAAAAAAAAAAAsBROawAAAAAAAAAAAAAAAAAAwNIQAAYAAAAAAAAAAAAAAAAAgCUiAAwAAAAAAAAAAAAAAAAAAEtEABgAAAAAAAAAAAAAAAAAAJaIADAAAAAAAAAAAAAAAAAAACwRAWAAAAAAAAAAAAAAAAAAAFgiAsAAAAAAAAAAAAAAAAAAALBEBIABAAAAAAAAAAAAAAAAAGCJCAADAAAAAAAAAAAAAAAAAMASEQAGAAAAAAAAAAAAAAAAAIAlIgAMAAAAAAAAAAAAAAAAAABLRAAYAAAAAAAAAAAAAAAAAACWiAAwAAAAAAAAAAAAAAAAAAAsEQFgAAAAAAAAAAAAAAAAAABYIgLAAAAAAAAAAAAAAAAAAACwRASAAQAAAAAAAAAAAAAAAABgiQgAAwAAAAAAAAAAAAAAAADAEhEABgAAAAAAAAAAAAAAAACAJSIADAAAAAAAAAAAAAAAAAAAS+T0BgAAAAAAAAAAAAAAALALHDm81g499GJ78vFj7Xv/5pX2xA+OPx5/ZfDZE8ff69q3f0+74I2nHX8+rR144+vam9/yunbRW05vF/3t0wefAcBm2rN2XAMAAAAAAAAAAAAAAADYYRL4fex/frl9+8EX2kPfevGUkO+8LnprAsGnt7dfeWa7/MqzGgAsmgAwAAAAAAAAAAAAAAAAsKMceuil9uCfvdAe+uYLgxDwZko14ASBr7j67HbJ289oALAIAsAAAAAAAAAAAAAAAADAykvQ9+v//Gj7+peObnrod5QDF57WrvvgvkEYGAA2QgAYAAAAAAAAAAAAAAAAWFnLEPwdliDwO9+zt73r+AMA5iEADAAAAAAAAAAAAAAAAKykb3/rhfYnf3i4PfH4sbaMVAQGYF4CwAAAAAAAAAAAAAAAAMBKSeD3j+78cTv08EttFbz9yjPbr//2OYNAMABMQwAYAAAAAAAAAAAAAAAAWBlf/9LRdvCzR9qRw6sVi9p7zp7267+9XzVgAKYiAAwAAAAAAAAAAAAAAAAsvQR+E/xNAHiVvetXzm6/duM5DQDGEQAGAAAAAAAAAAAAgBXyne98Z/A477zz2rXXXjv1fPfdd1975pln2sUXX9ze8Y53nPTZo48+2r7xjW+0efQtb5Lu+rIN2ZZxqu3TTg+LVMffrL9zO9mk74z0VR6zfjcAjPPE48fa3Z94pj323VfaTnDRW1/Xbvz4ee3Ahae1ZVXjzmnNMy5k9/n85z8/9vMcR29729uM+TdZjeeGx7ij3md7nN4AAAAAAAAAAAAAgJWRMOIdd9wxuDB+2guyc5H9TTfdNHj9/ve//5RgRi7wrs9nlWUdPHhwpnm663v44YfHXtyfbc0jbr31VkEAtlQCEB/4wAfWf/6rv/orx2B7tV+m+c7I91S+c/K7C7ARCf/+/kefHjzvFAkyZ5t+51PnL20IuMad05pnXMjuM+3/O2oMkfEEi1fjuYxtu/8ny/8d83uf32cB4O0nAAwAAAAAAAAAAAAAO1gu7P7Yxz429fTTXmCfiqhVlXezDId/hQjZasNVbu+++27H4ZBR3xn57skjv8MJkD3wwAMNYB47MfxbatuWOQRcphkjukkGs8jx... (truncated for brevity)",
-    "nextStepId": null,
-    "steps": [
-      {
-        "id": "fanpkt",
-        "title": "",
-        "content": "<p>Накладная подписана и отправлена. Статус изменился на «Ожидается погрузка»</p>",
-        "mascot": "m_custom_yt83sl",
-        "x": 78.53,
-        "y": 36.28,
-        "mascotSide": "left",
-        "mascotX": 63.33,
-        "mascotY": 29.84
-      }
-    ],
-    "clickZones": [
-      {
-        "x": 81.99,
-        "y": 13.09,
-        "w": 17.07,
-        "h": 9.97,
-        "action": ""
-      }
-    ]
-  }
+    {
+        "id": "hs4d4d",
+        "label": "etrn_t1_1",
+        "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAYAAACQvstyAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwBcb51JREFUeAHs/T/std1yHYatOVckL0kVEQEJiFJEcapIXSSnsAxIAW+K0FEV0lUYVVJhIE4RGeqk0J0CpXAaA1QTOe4uOyVMYRKQAKkSpM5MZYFNLEAMRDWM2fBM3vPMrDVr9jnvFWNL1P2++5x73+93zvPsP7NnZq2Zvc/e54m/+gv5ROD1CuSX/0V/mvd53ZtXfvkQ18UvbzLhL5ZddViONz681ObRN6zKtHd29Gr/2XV2Xbbl48OnvpZsWcN6dDv5Sb7qN3KPfsvQ5dQ/xc5DDXMn/KN6MvlcCZeQlOXxRZZpt8qbDcOq5ocxuy7V+Wddul0CJtOr/KUT/rX28n24b3b9pBKcOts2TlPK1dV//08A/+Hf2G399m8Bv/xLyC9/Y/kD3n3y9AP16bL0vRj/0L2vOW3u+jOm8ceP94DDN99fH33T5T5ssPH8jo8b/zf+V7m38fHTDyH+3S+XA23bAD8C+P/eLyC+/Ht7/de/Cfzn/2fgn/8z3Pi/8b9FuPH/rcE/7viPG/83/m/848b/jzD+f/E/Av7Un5nu/tHfBb7/n2573Ph/6/fG/43/bwX+qV+Jecd/4Mb/lL/xf+MfN/7fPt/4v/GPG//q+c0u1ezX8f+l+Jc3JWfiGEXOmM2aLYTAnV+aiS//+fL/Us6XP33t9UE4Dw6xVe8EcPXWda6/dWEp9Hw/0pQ49a7b6MEvP4vSx+oTS4YUZ1TZ63N97PczANpSCs7TUuwiWufStW6G5GlIX21U38MJpdeUi2dLHByij7kUHdRd6TlMFhztkIBKvqVbe9Ewasj9jswRDpJN/Ff7B/fk2IX2brhSXz7Ojboo/Bem6spR5/W27q/oMXZtw9IuSy8tE+sSIxEZOPTSKjiua8yy9+MRhv8qP3JsT7Tr5y21+6nchcEP+D/bnXoWLtv+tKD8u3xfgXPex8J/fYgu3z7Y+qV/hJGj/A2CzvhHBSS6ZgkiOwknrCOBYVjjexVqYdWGtZnTUnPEo/3A27cws+CQ8SnQzmvwyc/sKgQ/Nt/lkQdLlf4Og7YSzvKG7TexXveeX64+Vh351KYu+xALs/SzpoGu+AxDPDw9ebX/zAZW+4aMXW3V+Bp34Q7Y/rUUUqpAGTPJkSPfJVoq/nv8oy3DOBxv+D/pj6rIWPoyvsL5In9/jP85Q2xfclnTh3S4YA95Y0+Ksc/2PgbjFwDs7/Y9ZyL6d3yOwy2nrlhAeedXwMXouk4qMHAxKD4ZPATgd8Jo/XtMdMXOwEfEow1PvmkMxQlMTlP5jScpzXctrprDvKRAcqh6kh5JpXZjpy5p+H+Pu69yg2ULRpb/+5ThUDONYuVO15de8RU/g/EgS2PTyOVjT0yceMv/fXyl01z3N74UU2N1vur0+DcuSVj0zykH1wtz2TzGIz9rYpX/xY6zU4TxP0rWHJdAu+nEy4nHvN4yjxDA1+N/bseZGLz1tvL/Bam0PMd4y3JX8s7EYfUcWLkb24/x6o69089bPM9txpNr38f/7ns7P/6UR36Cf1psPvAx2MOOtz1Gs8ynF8c1ttVwMX4zMiw9uHIBeF71zlXTp8f/rbsP48PncueLfDjxKYQ9CzhuU4xirvj/zPe5p3y9A04qKRo+Y/w/7P56/8qpC+zKN6fOy3IPi13G71f5R5p/knO+Fv9poNbr48VnF1Cyw9L2qxidXrz35fX4zpfCTwsJEMZCMaJFfeVKr7nLNNhSRkvaweTVXjzeyX3ZegekS/fPZ7WfbZs1KdVw33OoRUWDm8mlLp0jKJfj37m44kHK0ImTm2J0Ldu98Q7rkHNallxzQg39... (truncated for brevity)",
+        "nextStepId": null,
+        "steps": [
+            {
+                "id": "lnp2k0",
+                "title": "Шаг №1",
+                "content": "<p>Приветствуем вас в сервисе электронного документооборота и электронных перевозочных документов Доки.</p>",
+                "mascot": "m_custom_yt83sl",
+                "x": 64.14,
+                "y": 66.92,
+                "mascotSide": "left",
+                "mascotX": 47.68,
+                "mascotY": 60.48
+            },
+            {
+                "id": "u3w85f",
+                "title": "Шаг №2",
+                "content": "<p>В сервисе Доки можно работать как с УПД, актами, накладными, так и с перевозочными документами</p>",
+                "mascot": "m_custom_yt83sl",
+                "x": 64.14,
+                "y": 65.14,
+                "mascotSide": "left",
+                "mascotX": 47.68,
+                "mascotY": 60.48
+            },
+            {
+                "id": "v1ijc8",
+                "title": "Шаг №3",
+                "content": "<p>Для начала работы грузоотправителю необходимо будет сформировать транспортную накладную, затем загрузить ее в сервис Доки и отправить - это будет первый титул транспортной накладной. Создание ЭТрН пока что доступно только из 1С или иных учетных систем. В веб-кабинете Доки возможность создать и отредактировать первой титул ЭТрН появится позднее, следите за обновлениями!</p>",
+                "mascot": "m_custom_yt83sl",
+                "x": 63.97,
+                "y": 75.85,
+                "mascotSide": "left",
+                "mascotX": 47.68,
+                "mascotY": 60.48
+            },
+            {
+                "id": "lpafai",
+                "title": "Шаг №4",
+                "content": "<p>Сейчас мы загрузим и отправим транспортную накладную в веб-кабинете сервиса Доки.</p>",
+                "mascot": "m_custom_zmpzyn",
+                "x": 22.72,
+                "y": 80.76,
+                "mascotSide": "left",
+                "mascotX": 35.3,
+                "mascotY": 76.69
+            }
+        ],
+        "clickZones": [
+            {
+                "x": 4.1,
+                "y": 89.39,
+                "w": 20.08,
+                "h": 6.54,
+                "action": "Шаг2"
+            }
+        ]
+    },
+    {
+        "id": "mcx8ji",
+        "label": "etrn_t1_2",
+        "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAYAAACQvstyAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAC0ZdJREFUeAHs/X2wZOV9J3g+xXsVWKhVbiHbiJ6WOnCPNgT07MsYDB0zkmF3BeGwPLJFCKu9YiPcBukPhRtNw64XQsQ6oANaq+gJg1fRQa9blgKNPS13q9DuIEsxsyDoid6YFjDLrmtG7TZi28JtZBBUFS/i3q1vUr/LqayTb/dm3pt57+cTkZV5M8/Lc55zbp6nbpzv+e1bP64BAAAAAAAAAAAAAAAAAABL4bQGAAAAAAAAAAAAAAAAAAAsDQFgAAAAAAAAAAAAAAAAAABYIgLAAAAAAAAAAAAAAAAAAACwRASAAQAAAAAAAAAAAAAAAABgiQgAAwAAAAAAAAAAAAAAAADAEhEABgAAAAAAAAAAAAAAAACAJSIADAAAAAAAAAAAAAAAAAAAS0QAGAAAAAAAAAAAAAAAAAAAlogAMAAAAAAAAAAAAAAAAAAALBEBYAAAAAAAAAAAAAAAAAAAWCICwAAAAAAAAAAAAAAAAAAAsEQEgAEAAAAAAAAAAAAAAAAAYIkIAAMAAAAAAAAAAAAAAAAAwBIRAAYAAAAAAAAAAAAAAAAAgCUiAAwAAAAAAAAAAAAAAAAAAEtEABgAAAAAAAAAAAAAAAAAAJaIADAAAAAAAAAAAAAAAAAAACwRAWAAAAAAAAAAAAAAAAAAAFgiAsAAAAAAAAAAAAAAAAAAALBEzmgAAAAAAAAAAAAAAAAAe8DRI+vt8BOvtR88t9a+92/eaM9///jjuTcGnz1//L2uA+fua+9412nHn09rB991env3e05vF77njHbh3zhj8BkALNK+9eMaAAAAAAAAAAAAAAAAwC6TwO+z/9OP2ncef7U98dhrp4R8N+vC9yYQfEa79Iqz2mVXnN0AYN4EgAEAAAAAAAAAAAAAAIBd5fATr7fH/+jV9sS3Xx2EgBcp1YATBL786nPaxZee2QBgHgSAAQAAAAAAAAAAAAAAgJWXoO+3/tmx9q2vHlt46HeUgxec1q77+IFBGBgAtkIAGAAAAAAAAAAAAAAAAFhZyxD8HZYg8Ac+vL998PgDADZDABgAAAAAAAAAAAAAAABYSd957NX2+79zpD3/3FpbRioCA7BZAsAAAAAAAAAAAAAAAADASkng93fvfakdfvL1tgouveKs9su/ft4gEAwA0xAABgAAAAAAAAAAAAAAAFbGt756rB364tF29MhqxaL2n7ev/fKvn6saMABTEQAGAAAAAAAAAAAAAAAAll4Cvwn+JgC8yj74C+e0X7rpvAYA4wgAAwAAAAAAAAAAAMAKeeqppwaP888/v1177bVTz/fQQw+1F198sV100UXtyiuvPOmzZ555pj366KNtM/qWN0l3fdmGbMs41fZpp4d5quNv1t+53WzSd0b6Ko9ZvxsAxnn+ubV2/2dfbM9+9422G1z43tPbTXec3w5ecFpbVjXunNZmxoXsPV/+8pfHfp7j6P3vf78x/4LVeG54jDvqfXbGGQ0AAAAAAAAAAAAAWBkJI959992DC+OnvSA7F9nffPPNg9cf+9jHTglm5ALv+nxWWdahQ4dmmqe7vieffHLsxf3Z1jzi1ltvFQRgWyUAccMNN2z8/Kd/+qeOwfZmv0zznZHvqXzn5HcXYCsS/v3cZ14YPO8WCTJnm37jnrcvbQi4xp3T2sy4kL1n2v931Bgi4wnmr8ZzGdt2/0+W/zvm9z6/zwLAO08AGAAAAAAAAAAAAAB2sVzYfdttt009/bQX2KcialXlXZTh8K8QIdttuMrt/fff7zgcMuo7I989eeR3OAGyRx55pAFsxm4M/5batmUOAZdpxohuksEscrz0... (truncated for brevity)",
+        "nextStepId": null,
+        "steps": [
+            {
+                "id": "s8q47y",
+                "title": "",
+                "content": "<p>Нажмите "Добавить документ"</p>",
+                "mascot": "m_custom_zmpzyn",
+                "x": 22.47,
+                "y": 14.71,
+                "mascotSide": "left",
+                "mascotX": 31.78,
+                "mascotY": 8.42
+            }
+        ],
+        "clickZones": [
+            {
+                "x": 1.17,
+                "y": 8.03,
+                "w": 11.8,
+                "h": 4.46,
+                "action": "Шаг3"
+            }
+        ]
+    },
+    {
+        "id": "0i35r9",
+        "label": "Шаг 3",
+        "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAYAAACQvstyAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAFeRhJREFUeAHs3W+wbGddJ/pnn/xHwjmAA4SLCXG8wXhNEFBKKMKf1MW6pcDMAPNiiFMiUjXDnyql4AW80qmaKqkaLccXwJugMyUwLwZFhyQ1pXfAAQYsGYjkqJHonZCohMhgEhOSc3KS3ff8ep+n99PPftaf7t29z/7z+Tid7l7rWc9avf7sPjyzvv3buPnmmycJAAAAAAAAAAAAAAAAAADYF44lAAAAAAAAAAAAAAAAAABg3xAABgAAAAAAAAAAAAAAAACAfUQAGAAAAAAAAAAAAAAAAAAA9hEBYAAAAAAAAAAAAAAAAAAA2EcEgAEAAAAAAAAAAAAAAAAAYB8RAAYAAAAAAAAAAAAAAAAAgH1EABgAAAAAAAAAAAAAAAAAAPYRAWAAAAAAAAAAAAAAAAAAANhHBIABAAAAAAAAAAAAAAAAAGAfEQAGAAAAAAAAAAAAAAAAAIB9RAAYAAAAAAAAAAAAAAAAAAD2EQFgAAAAAAAAAAAAAAAAAADYRwSAAQAAAAAAAAAAAICpjY2NtbTdK/txm/baMvvAfiO4/g8+1z/Lcv0ffK5/luX6P/hc/4ebADAAAAAAAAAAAAAAR9JBu+l5L7Z3MpmstO3YbV7VZ1t2m+ppe31ujFnf2G1a5BjuZpkx9vM15vrfyfXf3WadXP97z/W/k+u/u806uf73nut/J9d/d5t1cv0zlgAwAAAAAAAAAAAAAEdSedPzQbhReRU3ae/Xz7muG9DHrque1mqz233Xt/yYc/EgHv+9PK6Lcv3vH65/1/9ec/3vH65/1/9ec/3vH65/1z/jCAADAAAAAAAAAAAAsJRFbibe7zfYn68blVe93qH+FlnfKo7Z+divQ9u97OcaExxYdPndtFuGG/LbXP87uf7nuf4PL9f/Tq7/ea7/w8v1v5Prf57rn/1AABgAAAAAAAAAAACApSxSJWkdNx63qjb1raect8iN8kP99vUxtNzQ/hq7nfk599e1XLlN5XO5fH6/7P5sLds6Vl3zxuhbfnNzczqta1/s5lwc2t+t7era5339j92O3Uxf9BoY28+qrsG+Nq1zc9nzdUxb13/3uluvXf+u/7F9jt2Gerrr3/Vfvw6u/3HTXf/j1uv6719367Xr3/U/1OcyDkKl7nW7MAEAAAAAAAAAAADAiix7M/fQjb1lv/km9fLm6/y6viE7t20tV6+/1U/XNpTb0poX08s+6vUObVPZpty+1vrrdq119t2k3ddHvf6u/TlmPa2b5uvXffuldZy6PmNMiyDAIst2bUu9PUPzy2mt1/X+qOd37Yuybd/8etrQedE6L+vPVPdXb/fQTf+t7ena7tb7vn1VTnP9u/7z8q5/17/r3/U/dlnXv+vf9e/6d/3v/EyruP7rPlvzh/StZxld19V+dsEb3vCGX0oAAAAAAAAAAAAAsAf6bj7u0mqzyI27Y28uHruOrpDCIv12rWs3NyTXN4W35tc3pfeta9n9tgpD617F/ir7GdNuXX31LTd0TLuMOW8Xtcrld3v9LrItrv/t+a7/dj9j2q2rL9f/+OX6pi2y/NjlXP/nh+t/5zzXf/+0RZYfu5zr//xw/e+cd1Cv/9axKqeNWT4bu8xhpgIwAAAAAAAAAAAAACvVqviTp/e17boJejc3eA8t33eT/9jtWXT7uvZD17xl9K2j6339mYe2pW6/25vx+7ata/7QZ6gt+hnH9LlIX612Q9WzxrSrtbZ5VcdmEa3rf9HzxvW/ONd/m+t/b7n+h5cvp7n+x617Vdf/46c30/++bzN99+FJeug7T06fH31ka/6jD+cKovHv00m66JKN... (truncated for brevity)",
+        "nextStepId": null,
+        "steps": [
+            {
+                "id": "f2966v",
+                "title": "",
+                "content": "<p>В блоке "Загрузка документа ЭПД" перенесите файл в область загрузки документов или нажмите кнопку "Загрузить"</p>",
+                "mascot": "m_custom_yt83sl",
+                "x": 55.94,
+                "y": 56.96,
+                "mascotSide": "left",
+                "mascotX": 40.23,
+                "mascotY": 48.87
+            }
+        ],
+        "clickZones": [
+            {
+                "x": 71.37,
+                "y": 61.13,
+                "w": 26.86,
+                "h": 9.22,
+                "action": "Шаг4"
+            }
+        ]
+    },
+    {
+        "id": "82gptl",
+        "label": "Шаг 4",
+        "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAYAAACQvstyAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAGevNJREFUeAHs/X2wZOV9J3g+xXsVWKhVbiHbiJ6WOnCPNgT07MsYDB0zkmF3BeGwPLJFCKu9YiPcBukPhRtNw64XQsQ6oANaq+gJg1fRQa9blgKNPS13q9DuIEsxsyDoid6YFjDLrmtG7TZi28JtZBBUFS/i3q1vUr/LqayTb/dm3pt57+cTkZV5M8/Lc55zbp6nbpzv+e1bP64BAAAAAAAAAAAAAAAAAABL4bQGAAAAAAAAAAAAAAAAAAAsDQFgAAAAAAAAAAAAAAAAAABYIgLAAAAAAAAAAAAAAAAAAACwRASAAQAAAAAAAAAAAAAAAABgiQgAAwAAAAAAAAAAAAAAAADAEhEABgAAAAAAAAAAAAAAAACAJSIADAAAAAAAAAAAAAAAAAAAS0QAGAAAAAAAAAAAAAAAAAAAlogAMAAAAAAAAAAAAAAAAAAALBEBYAAAAAAAAAAAAAAAAAAAWCICwAAAAAAAAAAAAAAAAAAAsEQEgAEAAAAAAAAAAAAAAAAAYIkIAAMAAAAAAAAAAAAAAAAAwBIRAAYAAAAAAAAAAAAAAAAAgCUiAAwAAAAAAAAAAAAAAAAAAEtEABgAAAAAAAAAAAAAAAAAAJaIADAAAAAAAAAAAAAAAAAAACwRAWAAAAAAAAAAAAAAAAAAAFgiAsAAAAAAAAAAAAAAAAAAALBEzmgAAAAAAAAAAAAAAAAAe8DRI+vt8BOvtR88t9a+92/eaM9///jjuTcGnz1//L2uA+fua+9412nHn09rB991env3e05vF77njHbh3zhj8BkALNK+9eMaAAAAAAAAAAAAAAAAwC6TwO+z/9OP2ncef7U98dhrp4R8N+vC9yYQfEa79Iqz2mVXnN0AYN4EgAEAAAAAAAAAAAAAAIBd5fATr7fH/+jV9sS3Xx2EgBcp1YATBL786nPaxZee2QBgHgSAAQAAAAAAAAAAAAAAgJWXoO+3/tmx9q2vHlt46HeUgxec1q77+IFBGBgAtkIAGAAAAAAAAAAAAAAAAFhZyxD8HZYg8Ac+vL998PgDADZDABgAAAAAAAAAAAAAAABYSd957NX2+79zpD3/3FpbRioCA7BZAsAAAAAAAAAAAAAAAADASkng93fvfakdfvL1tgouveKs9su/ft4gEAwA0xAABgAAAAAAAAAAAAAAAFbGt756rB364tF29MhqxaL2n7ev/fKvn6saMABTEQAGAAAAAAAAAAAAAAAAll4Cvwn+JgC8yj74C+e0X7rpvAYA4wgAAwAAAAAAAAAAAMAKeeqppwaP888/v1177bVTz/fQQw+1F198sV100UXtyiuvPOmzZ555pj366KNtM/qWN0l3fdmGbMs41fZpp4d5quNv1t+53WzSd0b6Ko9ZvxsAxnn+ubV2/2dfbM9+9422G1z43tPbTXec3w5ecFpbVjXunNZmxoXsPV/+8pfHfp7j6P3vf78x/4LVeG54jDvqfXbGGQ0AAAAAAAAAAAAAWBkJI959992DC+OnvSA7F9nffPPNg9cf+9jHTglm5ALv+nxWWdahQ4dmmqe7vieffHLsxf3Z1jzi1ltvFQRgWyUAccMNN2z8/Kd/+qeOwfZmv0zznZHvqXzn5HcXYCsS/v3cZ14YPO8WCTJnm37jnrcvbQi4xp3T2sy4kL1n2v931Bgi4wnmr8ZzGdt2/0+W/zvm9z6/zwLAO08AGAAAAAAAAAAAAAB2sVzYfdttt009/bQX2KcialXlXZTh8K8QIdttuMrt/fff7zgcMuo7I989eeR3OAGyRx55pAFsxm4M/5batmUOAZdpxohuksEscrz0... (truncated for brevity)",
+        "nextStepId": null,
+        "steps": [
+            {
+                "id": "3nsrii",
+                "title": "",
+                "content": "<p>Выберите файл и нажмите "Открыть":</p>",
+                "mascot": "m_custom_zmpzyn",
+                "x": 63.22,
+                "y": 42.38,
+                "mascotSide": "left",
+                "mascotX": 73.53,
+                "mascotY": 33.55
+            }
+        ],
+        "clickZones": [
+            {
+                "x": 33.47,
+                "y": 59.2,
+                "w": 37.06,
+                "h": 2.83,
+                "action": "Зона 2"
+            },
+            {
+                "x": 63.59,
+                "y": 70.21,
+                "w": 5.02,
+                "h": 3.12,
+                "action": "Шаг 5"
+            }
+        ]
+    },
+    {
+        "id": "rc201r",
+        "label": "Шаг 5",
+        "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAYAAACQvstyAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwADdl9JREFUeAHs/X2wZOV9J3g+xXsVWKhVbiHbiJ6WOnCPNgT07MsYDB0zkmF3BeGwPLJFCKu9YiPcBukPhRtNw64XQsQ6oANaq+gJg1fRQa9blgKNPS13q9DuIEsxsyDoid6YFjDLrmtG7TZi28JtZBBUFS/i3q1vUr/LqayTb/dm3pt57+cTkZV5M8/Lc55zbp6nbpzv+e1bP64BAAAAAAAAAAAAAAAAAABL4bQGAAAAAAAAAAAAAAAAAAAsDQFgAAAAAAAAAAAAAAAAAABYIgLAAAAAAAAAAAAAAAAAAACwRASAAQAAAAAAAAAAAAAAAABgiQgAAwAAAAAAAAAAAAAAAADAEhEABgAAAAAAAAAAAAAAAACAJSIADAAAAAAAAAAAAAAAAAAAS0QAGAAAAAAAAAAAAAAAAAAAlogAMAAAAAAAAAAAAAAAAAAALBEBYAAAAAAAAAAAAAAAAAAAWCICwAAAAAAAAAAAAAAAAAAAsEQEgAEAAAAAAAAAAAAAAAAAYIkIAAMAAAAAAAAAAAAAAAAAwBIRAAYAAAAAAAAAAAAAAAAAgCUiAAwAAAAAAAAAAAAAAAAAAEtEABgAAAAAAAAAAAAAAAAAAJaIADAAAAAAAAAAAAAAAAAAACwRAWAAAAAAAAAAAAAAAAAAAFgiAsAAAAAAAAAAAAAAAAAAALBEzmgAAAAAAAAAAAAAAAAAe8DRI+vt8BOvtR88t9a+92/eaM9///jjuTcGnz1//L2uA+fua+9412nHn09rB991env3e05vF77njHbh3zhj8BkALNK+9eMaAAAAAAAAAAAAAAAAwC6TwO+z/9OP2ncef7U98dhrp4R8N+vC9yYQfEa79Iqz2mVXnN0AYN4EgAEAAAAAAAAAAAAAAIBd5fATr7fH/+jV9sS3Xx2EgBcp1YATBL786nPaxZee2QBgHgSAAQAAAAAAAAAAAAAAgJWXoO+3/tmx9q2vHlt46HeUgxec1q77+IFBGBgAtkIAGAAAAAAAAAAAAAAAAFhZyxD8HZYg8Ac+vL998PgDADZDABgAAAAAAAAAAAAAAABYSd957NX2+79zpD3/3FpbRioCA7BZAsAAAAAAAAAAAAAAAADASkng93fvfakdfvL1tgouveKs9su/ft4gEAwA0xAABgAAAAAAAAAAAAAAAFbGt756rB364tF29MhqxaL2n7ev/fKvn6saMABTEQAGAAAAAAAAAAAAAAAAll4Cvwn+JgC8yj74C+e0X7rpvAYA4wgAAwAAAAAAAAAAAMAKeeqppwaP888/v1177bVTz/fQQw+1F198sV100UXtyiuvPOmzZ555pj366KNtM/qWN0l3fdmGbMs41fZpp4d5quNv1t+53WzSd0b6Ko9ZvxsAxnn+ubV2/2dfbM9+9422G1z43tPbTXec3w5ecFpbVjXunNZmxoXsPV/+8pfHfp7j6P3vf78x/4LVeG54jDvqfXbGGQ0AAAAAAAAAAAAAWBkJI959992DC+OnvSA7F9nffPPNg9cf+9jHTglm5ALv+nxWWdahQ4dmmqe7vieffHLsxf3Z1jzi1ltvFQRgWyUAccMNN2z8/Kd/+qeOwfZmv0zznZHvqXzn5HcXYCsS/v3cZ14YPO8WCTJnm37jnrcvbQi4xp3T2sy4kL1n2v931Bgi4wnmr8ZzGdt2/0+W/zvm9z6/zwLAO08AGAAAAAAAAAAAAAB2sVzYfdttt009/bQX2KcialXlXZTh8K8QIdttuMrt/fff7zgcMuo7I989eeR3OAGyRx55pAFsxm4M/5batmUOAZdpxohuksEscrz0... (truncated for brevity)",
+        "nextStepId": null,
+        "steps": [
+            {
+                "id": "92xq69",
+                "title": "",
+                "content": "<p>Документ успешно загружен и появился в разделе "Логистика". Нажмите на загруженный документ</p>",
+                "mascot": "m_custom_yt83sl",
+                "x": 43.89,
+                "y": 9.06,
+                "mascotSide": "left",
+                "mascotX": 27.02,
+                "mascotY": 2
+            }
+        ],
+        "clickZones": [
+            {
+                "x": 14.39,
+                "y": 17.25,
+                "w": 84.34,
+                "h": 5.8,
+                "action": "ШАг 6"
+            }
+        ]
+    },
+    {
+        "id": "z3ldhq",
+        "label": "Шаг 6",
+        "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAYAAACQvstyAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAEXotJREFUeAHs/X2wZGd9J3g+JfRWVbIkJIPAFvI0dMg92kCSZ1/GkqFjBiztLlI4jAcbAkx70Ua4LcEfhEdMi12vCBTrQB2oWaInLHmJDvXavASMmcbdlNgdYYiZFUie6I1pJGY145rBbgu5QQa9oqpS6aXu1DdVv6tTWSdfb957M+/9fCKyMm/meXnOc87N89SN8z2/PWvHNQAAAAAAAAAAAAAAAAAAYCmc1gAAAAAAAAAAAAAAAAAAgKUhAAwAAAAAAAAAAAAAAAAAAEtEABgAAAAAAAAAAAAAAAAAAJaIADAAAAAAAAAAAAAAAAAAACwRAWAAAAAAAAAAAAAAAAAAAFgiAsAAAAAAAAAAAAAAAAAAALBEBIABAAAAAAAAAAAAAAAAAGCJCAADAAAAAAAAAAAAAAAAAMASEQAGAAAAAAAAAAAAAAAAAIAlIgAMAAAAAAAAAAAAAAAAAABLRAAYAAAAAAAAAAAAAAAAAACWiAAwAAAAAAAAAAAAAAAAAAAsEQFgAAAAAAAAAAAAAAAAAABYIgLAAAAAAAAAAAAAAAAAAACwRASAAQAAAAAAAAAAAAAAAABgiQgAAwAAAAAAAAAAAAAAAADAEhEABgAAAAAAAAAAAAAAAACAJSIADAAAAAAAAAAAAAAAAAAAS0QAGAAAAAAAAAAAAAAAAAAAlsjpDQAAAAAAAAAAAAAAAGAXOHxorR188Pn2xGPH2vf/8qX2+A+PPx57afDZ48ff69q3f0+74HWnHX8+rV34ule1N7zxVe3iN57eLv67pw8+A4DNtGftuAYAAAAAAAAAAAAAAACwwyTw++j//GL7zgNH24P3P39KyHdeF78pgeDT2xVXn9muvPqsBgCLJgAMAAAAAAAAAAAAAAAA7CgHH3yhPfBnR9uD3z46CAFvplQDThD4qmvObpdecUYDgEUQAAYAAAAAAAAAAAAAAABWXoK+3/wXR9o3v3Jk00O/o1x40Wnt+vfvG4SBAWAjBIABAAAAAAAAAAAAAACAlbUMwd9hCQK/7Z1729uPPwBgHgLAAAAAAAAAAAAAAAAAwEr6zv1H25/84aH2+GPH2jJSERiAeQkAAwAAAAAAAAAAAAAAACslgd8/uuMn7eBDL7RVcMXVZ7bf+J1zBoFgAJiGADAAAAAAAAAAAAAAAACwMr75lSPtwGcPt8OHVisWtfecPe03fme/asAATEUAGAAAAAAAAAAAAAAAAFh6Cfwm+JsA8Cp7+6+e3X79xnMaAIwjAAwAAAAAAAAAAAAAK+S73/3u4HHeeee16667bur57rnnnvb000+3Sy65pL3lLW856bNHHnmkfetb32rz6FveJN31ZRuyLeNU26edHhapjr9Zf+d2sknfGemrPGb9bgAY5/HHjrW7Pv50e/R7L7Wd4OI3vard+LHz2oUXndaWVY07pzXPuJDd5wtf+MLYz3McvfnNbzbm32Q1nhse4456n+1xegMAAAAAAAAAAAAAVkbCiLfffvvgwvhpL8jORfY33XTT4PV73/veU4IZucC7Pp9VlnXgwIGZ5umu76GHHhp7cX+2NY+45ZZbBAHYUglAvO9971v/+a//+q8dg+3lfpnmOyPfU/nOye8uwEYk/Pupjzw1eN4pEmTONv3uJ89f2hBwjTunNc+4kN1n2v931Bgi4wkWr8ZzGdt2/0+W/zvm9z6/zwLA208AGAAAAAAAAAAAAAB2sFzY/dGPfnTq6ae9wD4VUasq72YZDv8KEbLVhqvc3nXXXY7DIaO+M/Ldk0d+hxMgu++++xrAPHZi+LfUti1zCLhMM0Z0kwxmkeOl... (truncated for brevity)",
+        "nextStepId": null,
+        "steps": [
+            {
+                "id": "4cqilb",
+                "title": "",
+                "content": "<p>Проверьте накладную и нажмите "Подписать и отправить"</p>",
+                "mascot": "m_custom_yt83sl",
+                "x": 71.59,
+                "y": 9.81,
+                "mascotSide": "left",
+                "mascotX": 55.3,
+                "mascotY": 5.59
+            }
+        ],
+        "clickZones": [
+            {
+                "x": 88.02,
+                "y": 7.73,
+                "w": 10.37,
+                "h": 5.35,
+                "action": "Шаг 7 "
+            }
+        ]
+    },
+    {
+        "id": "mnyk7q",
+        "label": "Шаг 7",
+        "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAYAAACQvstyAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAOdEVYdFNvZnR3YXJlAEZpZ21hnrGWYwAET8NJREFUeAHs/X2wZGd9J3g+JfRWVbIkVDYCW8jT0CH3aAMhz76MJaOOGbC0u0jhMB5sFGDaizbCbQn+UHjEtNj1ikCxDtSB2kv0hCUv0aFeN4YQY6ZxNyV2RxhiZgXIE70xjcSsZlwztNtCbpBBr6iq9Fp36puq39WprJOvN++9mfd+PhFZmTfzvDznOefmeerG+Z7fnrXjGgAAAAAAAAAAAAAAAAAAsBROawAAAAAAAAAAAAAAAAAAwNIQAAYAAAAAAAAAAAAAAAAAgCUiAAwAAAAAAAAAAAAAAAAAAEtEABgAAAAAAAAAAAAAAAAAAJaIADAAAAAAAAAAAAAAAAAAACwRAWAAAAAAAAAAAAAAAAAAAFgiAsAAAAAAAAAAAAAAAAAAALBEBIABAAAAAAAAAAAAAAAAAGCJCAADAAAAAAAAAAAAAAAAAMASEQAGAAAAAAAAAAAAAAAAAIAlIgAMAAAAAAAAAAAAAAAAAABLRAAYAAAAAAAAAAAAAAAAAACWiAAwAAAAAAAAAAAAAAAAAAAsEQFgAAAAAAAAAAAAAAAAAABYIgLAAAAAAAAAAAAAAAAAAACwRASAAQAAAAAAAAAAAAAAAABgiQgAAwAAAAAAAAAAAAAAAADAEhEABgAAAAAAAAAAAAAAAACAJSIADAAAAAAAAAAAAAAAAAAAS+T0BgAAAAAAAAAAAAAAALALHDm81g499GJ78vFj7Xv/5pX2xA+OPx5/ZfDZE8ff69q3f0+74I2nHX8+rR144+vam9/yunbRW05vF/3t0wefAcBm2rN2XAMAAAAAAAAAAAAAAADYYRL4fex/frl9+8EX2kPfevGUkO+8LnprAsGnt7dfeWa7/MqzGgAsmgAwAAAAAAAAAAAAAAAAsKMceuil9uCfvdAe+uYLgxDwZko14ASBr7j67HbJ289oALAIAsAAAAAAAAAAAAAAAADAykvQ9+v//Gj7+peObnrod5QDF57WrvvgvkEYGAA2QgAYAAAAAAAAAAAAAAAAWFnLEPwdliDwO9+zt73r+AMA5iEADAAAAAAAAAAAAAAAAKykb3/rhfYnf3i4PfH4sbaMVAQGYF4CwAAAAAAAAAAAAAAAAMBKSeD3j+78cTv08EttFbz9yjPbr//2OYNAMABMQwAYAAAAAAAAAAAAAAAAWBlf/9LRdvCzR9qRw6sVi9p7zp7267+9XzVgAKYiAAwAAAAAAAAAAAAAAAAsvQR+E/xNAHiVvetXzm6/duM5DQDGEQAGAAAAAAAAAAAAgBXyne98Z/A477zz2rXXXjv1fPfdd1975pln2sUXX9ze8Y53nPTZo48+2r7xjW+0efQtb5Lu+rIN2ZZxqu3TTg+LVMffrL9zO9mk74z0VR6zfjcAjPPE48fa3Z94pj323VfaTnDRW1/Xbvz4ee3Ahae1ZVXjzmnNMy5k9/n85z8/9vMcR29729uM+TdZjeeGx7ij3md7nN4AAAAAAAAAAAAAgJWRMOIdd9wxuDB+2guyc5H9TTfdNHj9/ve//5RgRi7wrs9nlWUdPHhwpnm663v44YfHXtyfbc0jbr31VkEAtlQCEB/4wAfWf/6rv/orx2B7tV+m+c7I91S+c/K7C7ARCf/+/kefHjzvFAkyZ5t+51PnL20IuMad05pnXMjuM+3/O2oMkfEEi1fjuYxtu/8ny/8d83uf32cB4O0nAAwAAAAAAAAAAAAAO1gu7P7Yxz429fTTXmCfiqhVlXezDId/hQjZasNVbu+++27H4ZBR3xn57skjv8MJkD3wwAMNYB47MfxbatuWOQRcphkjukkGs8jx... (truncated for brevity)",
+        "nextStepId": null,
+        "steps": [
+            {
+                "id": "fanpkt",
+                "title": "",
+                "content": "<p>Накладная подписана и отправлена. Статус изменился на "Ожидается погрузка"</p>",
+                "mascot": "m_custom_yt83sl",
+                "x": 78.53,
+                "y": 36.28,
+                "mascotSide": "left",
+                "mascotX": 63.33,
+                "mascotY": 29.84
+            }
+        ],
+        "clickZones": [
+            {
+                "x": 81.99,
+                "y": 13.09,
+                "w": 17.07,
+                "h": 9.97,
+                "action": ""
+            }
+        ]
+    }
 ]

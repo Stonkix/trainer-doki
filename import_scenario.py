@@ -6,8 +6,8 @@ import sys
 # Default Configuration
 DEFAULT_JSON_FILE = r"C:\Users\alexa\Desktop\astraldocs\Авторизация водителя в мобильной версии Доки.json"
 DEFAULT_PREFIX = "mobile_1"
-OUTPUT_DIR = r"C:\Users\alexa\Desktop\astraldocs\astraldocs"
-IMAGE_DIR = r"C:\Users\alexa\Desktop\astraldocs\astraldocs\images"
+OUTPUT_DIR = r"C:\Users\alexa\Desktop\Работа\astraldocs\astraldocs"
+IMAGE_DIR = r"C:\Users\alexa\Desktop\Работа\astraldocs\astraldocs\images"
 
 # Template based on etrn_t1_1.html
 TEMPLATE = """<!DOCTYPE html>
@@ -201,8 +201,8 @@ def main():
             title=title,
             next_page=next_page,
             img_src=img_src,
-            steps_json=json.dumps(steps_for_html),
-            click_zones_json=json.dumps(click_zones_for_html),
+            steps_json=json.dumps(steps_for_html, ensure_ascii=False),
+            click_zones_json=json.dumps(click_zones_for_html, ensure_ascii=False),
             is_last_page="true" if i == len(data) - 1 else "false",
             end_page="end.html"
         )

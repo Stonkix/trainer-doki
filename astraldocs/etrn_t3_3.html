@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Подписание ЭТрН Т3 - Шаг 3</title>
-    <link rel="stylesheet" href="styles/scenariopagestyle.css">
+    <title>etrn_t3_3</title>
+    <link rel="stylesheet" href="./styles/scenariopagestyle.css">
     <style>
         .tooltip-show { background-color: #7c5cfc !important; }
         .hotspot { 
@@ -30,19 +30,19 @@
 <body>
     <header class="header">
         <div class="nav-buttons">
-            <button class="nav-button" id="prev-button" onclick="window.location.href='etrn_t3_2.html'">
-                <img src="assets/icons/arrowLeft.svg" alt="Назад">
+            <button class="nav-button" onclick="window.location.href='./index.html'">
+                <img src="./assets/icons/arrowLeft.svg" alt="Назад">
             </button>
-            <button class="nav-button" id="home-button" onclick="window.location.href='index.html'">
-                <img src="assets/icons/exitButton.svg" alt="На главную">
+            <button class="nav-button" onclick="window.location.href='./index.html'">
+                <img src="./assets/icons/exitButton.svg" alt="На главную">
             </button>
-            <button class="nav-button" id="next-button" onclick="window.location.href='etrn_t3_4.html'">
-                <img src="assets/icons/arrowRight.svg" alt="Вперёд">
+            <button class="nav-button" onclick="window.location.href='etrn_t3_4.html'">
+                <img src="./assets/icons/arrowRight.svg" alt="Вперёд">
             </button>
         </div>
         <div class="logo-and-title">
             <div class="logo">
-                <img src="Icon_Astal_Docs_color_v1.png" alt="Логотип">
+                <img src="./Icon_Astal_Docs_color_v1.png" alt="Логотип">
             </div>
             <div class="header-title">Доки</div>
         </div>
@@ -50,7 +50,7 @@
     </header>
     <div class="background-container">
         <div class="image-wrapper">
-            <img src="images/etrn_t3_3.png" id="step-img" alt="Экран 3">
+            <img src="./images/etrn_t3_3.png" id="step-img" alt="Экран">
             <div class="hotspot-container" id="hotspot-container">
                 <div class="tooltip tooltip-show" id="main-tooltip" style="left: 50%; top: 40%; transform: translate(-50%, -50%) scale(1); opacity: 1; z-index: 20;">
                     <div class="tooltip-title" id="tooltip-title"></div>
@@ -58,25 +58,21 @@
                     <div class="tooltip-actions">
                         <button class="next" id="dialogue-next-button" onclick="handleNext()">Далее</button>
                     </div>
-                    <img src="assets/icons/mascotRight.svg" class="tooltip-mascot tooltip-mascot-left mascot-show" alt="Маскот">
+                    <img src="./assets/icons/mascotRight.svg" class="tooltip-mascot tooltip-mascot-left mascot-show" alt="Маскот">
                 </div>
             </div>
         </div>
     </div>
     <script>
-        const steps = [
-            { title: "", content: "<p>Откроется транспортная накладная, ранее подписанная Грузоотправителем и Перевозчиком. Вы можете ознакомиться с этапами отгрузки и погрузки</p>", x: 68.66, y: 41.34 },
-            { title: "", content: "<p>Ознакомьтесь с этапами прохождения груза и нажмите кнопку «Оформить приёмку»</p>", x: 68.74, y: 40.15 }
-        ];
-        const clickZones = [
-            { x: 89.44, y: 8.03, w: 8.7, h: 4.31, action: 'etrn_t3_4.html' }
-        ];
+        const steps = [{"title": "", "content": "<p>Откроется редактор транспортной накладной. Заполните данные о грузополучателе и о приеме груза</p>", "x": 40.44, "y": 61.42}];
+        const clickZones = [{"x": 27.84, "y": 78.93, "w": 48.2, "h": 18.76, "action": "etrn_t3_4.html"}];
         let currentStep = 0;
         function handleNext() {
             const titleEl = document.getElementById('tooltip-title');
             const contentEl = document.getElementById('tooltip-inner');
             const tooltip = document.getElementById('main-tooltip');
             const btn = document.getElementById('dialogue-next-button');
+            
             if (currentStep < steps.length - 1) {
                 currentStep++;
                 contentEl.style.opacity = 0;
@@ -89,11 +85,19 @@
                     tooltip.style.top = steps[currentStep].y + '%';
                     contentEl.style.opacity = 1;
                     titleEl.style.opacity = 1;
-                    btn.textContent = (currentStep === steps.length - 1 && clickZones.length === 0) ? 'Завершить' : 'Далее';
+                    if (currentStep === steps.length - 1 && 'false' === 'true') {
+                        btn.textContent = 'Завершить';
+                    } else {
+                        btn.textContent = 'Далее';
+                    }
                 }, 250);
             } else {
-                tooltip.style.display = 'none';
-                document.querySelectorAll('.hotspot').forEach(h => h.style.display = 'block');
+                if ('false' === 'true') {
+                    window.location.href = 'end.html';
+                } else {
+                    tooltip.style.display = 'none';
+                    document.querySelectorAll('.hotspot').forEach(h => h.style.display = 'block');
+                }
             }
         }
         document.addEventListener('DOMContentLoaded', () => {
@@ -106,7 +110,13 @@
             titleEl.style.visibility = steps[0].title ? 'visible' : 'hidden';
             tooltip.style.left = steps[0].x + '%';
             tooltip.style.top = steps[0].y + '%';
-            btn.textContent = (steps.length === 1 && clickZones.length === 0) ? 'Завершить' : 'Далее';
+
+            if (steps.length === 1 && 'false' === 'true') {
+                btn.textContent = 'Завершить';
+            } else {
+                btn.textContent = 'Далее';
+            }
+
             const container = document.getElementById('hotspot-container');
             clickZones.forEach(z => {
                 const div = document.createElement('div');

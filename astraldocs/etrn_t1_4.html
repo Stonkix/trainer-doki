@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Загрузка и подписание ЭТрН Т1 - Шаг 4</title>
-    <link rel="stylesheet" href="styles/scenariopagestyle.css">
+    <title>etrn_t1_4</title>
+    <link rel="stylesheet" href="./styles/scenariopagestyle.css">
     <style>
         .tooltip-show { background-color: #7c5cfc !important; }
         .hotspot { 
@@ -30,19 +30,19 @@
 <body>
     <header class="header">
         <div class="nav-buttons">
-            <button class="nav-button" id="prev-button" onclick="window.location.href='etrn_t1_3.html'">
-                <img src="assets/icons/arrowLeft.svg" alt="Назад">
+            <button class="nav-button" onclick="window.location.href='./index.html'">
+                <img src="./assets/icons/arrowLeft.svg" alt="Назад">
             </button>
-            <button class="nav-button" id="home-button" onclick="window.location.href='index.html'">
-                <img src="assets/icons/exitButton.svg" alt="На главную">
+            <button class="nav-button" onclick="window.location.href='./index.html'">
+                <img src="./assets/icons/exitButton.svg" alt="На главную">
             </button>
-            <button class="nav-button" id="next-button" onclick="window.location.href='etrn_t1_5.html'">
-                <img src="assets/icons/arrowRight.svg" alt="Вперёд">
+            <button class="nav-button" onclick="window.location.href='etrn_t1_5.html'">
+                <img src="./assets/icons/arrowRight.svg" alt="Вперёд">
             </button>
         </div>
         <div class="logo-and-title">
             <div class="logo">
-                <img src="Icon_Astal_Docs_color_v1.png" alt="Логотип">
+                <img src="./Icon_Astal_Docs_color_v1.png" alt="Логотип">
             </div>
             <div class="header-title">Доки</div>
         </div>
@@ -50,7 +50,7 @@
     </header>
     <div class="background-container">
         <div class="image-wrapper">
-            <img src="images/etrn_t1_4.png" id="step-img" alt="Экран 4">
+            <img src="./images/etrn_t1_4.png" id="step-img" alt="Экран">
             <div class="hotspot-container" id="hotspot-container">
                 <div class="tooltip tooltip-show" id="main-tooltip" style="left: 50%; top: 40%; transform: translate(-50%, -50%) scale(1); opacity: 1; z-index: 20;">
                     <div class="tooltip-title" id="tooltip-title"></div>
@@ -58,33 +58,65 @@
                     <div class="tooltip-actions">
                         <button class="next" id="dialogue-next-button" onclick="handleNext()">Далее</button>
                     </div>
-                    <img src="assets/icons/mascotRight.svg" class="tooltip-mascot tooltip-mascot-left mascot-show" alt="Маскот">
+                    <img src="./assets/icons/mascotRight.svg" class="tooltip-mascot tooltip-mascot-left mascot-show" alt="Маскот">
                 </div>
             </div>
         </div>
     </div>
     <script>
-        const steps = [
-            { title: "", content: "<p>Выберите файл и нажмите “Открыть”</p>", x: 49.25, y: 30.48 }
-        ];
-        const clickZones = [
-            { x: 63.25, y: 69.31, w: 5.86, h: 5.06, action: 'etrn_t1_5.html' }
-        ];
+        const steps = [{"title": "", "content": "<p>Документ успешно загружен в раздел «Логистика». \nВ разделе «Логистика» отображаются все электронные транспортные накладные. В графе «Статус» можно посмотреть текущий статус накладных.\n</p>", "x": 49.67, "y": 53.89}, {"title": "", "content": "<p>Нажмите на загруженный документ</p>", "x": 48.01, "y": 47.24}];
+        const clickZones = [{"x": 14.63, "y": 17.58, "w": 83.44, "h": 5.02, "action": "etrn_t1_5.html"}];
         let currentStep = 0;
         function handleNext() {
+            const titleEl = document.getElementById('tooltip-title');
+            const contentEl = document.getElementById('tooltip-inner');
             const tooltip = document.getElementById('main-tooltip');
-            tooltip.style.display = 'none';
-            document.querySelectorAll('.hotspot').forEach(h => h.style.display = 'block');
+            const btn = document.getElementById('dialogue-next-button');
+            
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                contentEl.style.opacity = 0;
+                titleEl.style.opacity = 0;
+                setTimeout(() => {
+                    titleEl.textContent = steps[currentStep].title;
+                    contentEl.innerHTML = steps[currentStep].content;
+                    titleEl.style.visibility = steps[currentStep].title ? 'visible' : 'hidden';
+                    tooltip.style.left = steps[currentStep].x + '%';
+                    tooltip.style.top = steps[currentStep].y + '%';
+                    contentEl.style.opacity = 1;
+                    titleEl.style.opacity = 1;
+                    if (currentStep === steps.length - 1 && 'false' === 'true') {
+                        btn.textContent = 'Завершить';
+                    } else {
+                        btn.textContent = 'Далее';
+                    }
+                }, 250);
+            } else {
+                if ('false' === 'true') {
+                    window.location.href = 'end.html';
+                } else {
+                    tooltip.style.display = 'none';
+                    document.querySelectorAll('.hotspot').forEach(h => h.style.display = 'block');
+                }
+            }
         }
         document.addEventListener('DOMContentLoaded', () => {
             const titleEl = document.getElementById('tooltip-title');
             const contentEl = document.getElementById('tooltip-inner');
             const tooltip = document.getElementById('main-tooltip');
+            const btn = document.getElementById('dialogue-next-button');
             titleEl.textContent = steps[0].title;
             contentEl.innerHTML = steps[0].content;
             titleEl.style.visibility = steps[0].title ? 'visible' : 'hidden';
             tooltip.style.left = steps[0].x + '%';
             tooltip.style.top = steps[0].y + '%';
+
+            if (steps.length === 1 && 'false' === 'true') {
+                btn.textContent = 'Завершить';
+            } else {
+                btn.textContent = 'Далее';
+            }
+
             const container = document.getElementById('hotspot-container');
             clickZones.forEach(z => {
                 const div = document.createElement('div');
