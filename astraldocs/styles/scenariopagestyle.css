@@ -89,7 +89,14 @@
     object-fit: contain;
     z-index: 1;
   }
-  
+
+  /* PNG экранов 1С меньше высоты рабочей области в исходном размере.
+     Масштабируем их до высоты, но сохраняем целиком в пределах окна. */
+  #step-img[src*="_1c_"] {
+    height: calc(100vh - 60px);
+    max-width: 100vw;
+  }
+
   /* ====== Hotspot Styles ====== */
   .hotspot-container {
     position: absolute;
