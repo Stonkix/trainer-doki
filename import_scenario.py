@@ -3,11 +3,16 @@ import os
 import traceback
 import sys
 
+from PIL import Image
+
+import add_prefetch
+
 # Default Configuration
 DEFAULT_JSON_FILE = r"C:\Users\alexa\Desktop\astraldocs\Авторизация водителя в мобильной версии Доки.json"
 DEFAULT_PREFIX = "mobile_1"
 OUTPUT_DIR = r"C:\Users\alexa\Desktop\Работа\astraldocs\astraldocs"
 IMAGE_DIR = r"C:\Users\alexa\Desktop\Работа\astraldocs\astraldocs\images"
+MAX_IMAGE_WIDTH = 1920
 
 # Template based on etrn_t1_1.html
 TEMPLATE = """<!DOCTYPE html>
@@ -146,6 +151,22 @@ TEMPLATE = """<!DOCTYPE html>
 </html>
 """
 
+def ensure_webp(webp_name):
+    """Скриншоты кладём в images/ как PNG; для сайта конвертируем в lossless WebP."""
+    webp_path = os.path.join(IMAGE_DIR, webp_name)
+    png_path = os.path.splitext(webp_path)[0] + ".png"
+    if not os.path.exists(png_path):
+        if not os.path.exists(webp_path):
+            print(f"Warning: нет картинки {png_path}")
+        return
+    if not os.path.exists(webp_path) or os.path.getmtime(webp_path) < os.path.getmtime(png_path):
+        im = Image.open(png_path)
+        if im.width > MAX_IMAGE_WIDTH:
+            im = im.resize((MAX_IMAGE_WIDTH, round(im.height * MAX_IMAGE_WIDTH / im.width)), Image.LANCZOS)
+        im.save(webp_path, "WEBP", lossless=True, method=6)
+        print(f"Converted {webp_name}")
+
+
 def main():
     json_file = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_JSON_FILE
     prefix = sys.argv[2] if len(sys.argv) > 2 else DEFAULT_PREFIX
@@ -166,8 +187,9 @@ def main():
         filepath = os.path.join(OUTPUT_DIR, filename)
         
         title = step_data.get('label', f"Шаг {i+1}")
-        img_name = f"{prefix}_{i+1}.png"
+        img_name = f"{prefix}_{i+1}.webp"
         img_src = f"./images/{img_name}"
+        ensure_webp(img_name)
         
         # Determine next page for the header button
         next_page = "index.html"
@@ -212,6 +234,10 @@ def main():
         with open(filepath, 'r', encoding='utf-8') as f:
             f.read()
         print(f"Created {filepath}")
+
+    # Предзагрузка следующего шага (нужны уже созданные страницы-цели)
+    page_names = [f"{prefix}_{i+1}.html" for i in range(len(data))]
+    print(f"Prefetch added to {add_prefetch.process_pages(page_names)} pages")
 
 if __name__ == "__main__":
     try:

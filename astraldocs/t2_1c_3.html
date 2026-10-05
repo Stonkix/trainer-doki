@@ -26,6 +26,11 @@
             100% { transform: scale(1); opacity: 0.6; }
         }
     </style>
+<!-- prefetch-next -->
+    <link rel="prefetch" href="./t2_1c_4.html">
+    <link rel="prefetch" href="./images/t2_1c_4.webp" as="image">
+    <script>if(!document.createElement('link').relList.supports('prefetch')){addEventListener('load',function(){["./images/t2_1c_4.webp"].forEach(function(s){new Image().src=s;});});}</script>
+    <!-- /prefetch-next -->
 </head>
 <body>
     <header class="header">
@@ -50,7 +55,7 @@
     </header>
     <div class="background-container">
         <div class="image-wrapper">
-            <img src="./images/t2_1c_3.png" id="step-img" alt="Экран">
+            <img src="./images/t2_1c_3.webp" id="step-img" alt="Экран">
             <div class="hotspot-container" id="hotspot-container">
                 <div class="tooltip tooltip-show" id="main-tooltip" style="left: 50%; top: 40%; transform: translate(-50%, -50%) scale(1); opacity: 1; z-index: 20;">
                     <div class="tooltip-title" id="tooltip-title"></div>
@@ -64,8 +69,8 @@
         </div>
     </div>
     <script>
-        const steps = [{"title": "", "content": "<p>Для подтверждения доставки с замечаниями выберите «Подтвердить с замечаниями»</p>", "x": 26.45, "y": 54.19}];
-        const clickZones = [{"x": 49.3, "y": 49.4, "w": 11.05, "h": 3.55, "action": "t2_1c_4.html"}];
+        const steps = [{"title": "", "content": "<p>Для приема груза с замечаниями выберите «Подтвердить с замечаниями»</p>", "x": 26.34, "y": 44.52}];
+        const clickZones = [{"x": 49.54, "y": 49.77, "w": 10.7, "h": 3.06, "action": "t2_1c_4.html"}];
         let currentStep = 0;
         function handleNext() {
             const titleEl = document.getElementById('tooltip-title');
